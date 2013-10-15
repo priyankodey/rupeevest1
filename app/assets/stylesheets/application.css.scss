@@ -1,0 +1,74 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+body{
+	padding-top: 60px;
+}
+
+.carousel .item {
+    width: 100%; /*slider width*/
+    height: 500px;
+    max-height: 500px; /*slider height*/
+}
+.carousel .item img {
+    width: 100%; /*img width*/
+}
+/*add some makeup*/
+.carousel .carousel-control {
+    background: none;
+    border: none;
+    top: 50%;
+}
+/*full width container*/
+@media (max-width: 900px) {
+    .block {
+        margin-left: -80px;
+        margin-right: -80px;
+    }
+}
+
+.hero-unit.red{
+    background-color: rgba(0, 0, 0, 0);
+    
+}
+
+.behind{
+    position: absolute;
+    top: 0;
+    left: 0;
+    
+}
+
+
+/* Faded out hr */
+hr.soften {
+  height: 1px;
+  background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:    -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:     -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,.1), rgba(0,0,0,0));
+  border: 0;
+}
+
+#foot.container-fluid{
+background-image: image-url('black.jpg');
+
+}
+
+#abc.navbar-inner{
+background-color: #15375C; /* background color will be black for all browsers */
+  background-image: image-url('black.jpg');
+  background-repeat: no-repeat;
+  filter: none;
+
+}

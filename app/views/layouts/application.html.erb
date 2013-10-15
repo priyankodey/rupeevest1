@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rupeevest</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
+</head>
+<body>
+	<div class="navbar transparent navbar-fixed-top navbar-inverse" >
+  		<div id= "abc" class="navbar-inner" >
+  			<div class ="container-fluid">
+  				<a href = "/static_pages/home" class = "header_logo pull-left"><%= image_tag("logo.jpg", alt: "logo") %></a>
+  				<ul class = "nav">
+  					<li><%= link_to "Why Rupeevest", static_pages_whyus_path %><li>
+  					<li><%= link_to "About Us", static_pages_aboutus_path %><li>	
+  					<li><%= link_to "Profiler", static_pages_profiler_path %><li>
+  					<li><%= link_to "Contact", static_pages_contact_path %><li>
+          </ul>
+          <ul class= "nav pull-right">
+            <% if user_signed_in? %>
+              
+              <li><%= link_to current_user.email, edit_user_registration_path %></li>
+              <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>   
+            <% else %>
+               <a href="/users/sign_up" class="btn btn-primary">Register</a>
+               <a href="/users/sign_in" class="btn btn-primary">Log In</a> 
+            <% end %>
+          </ul>
+  			</div>
+  		</div>
+  	</div>
+
+
+
+
+	<div class="container-fluid">	
+    <% if flash[:notice] %>
+      <div class="alert alert-success">
+        <button class="close" data-dismiss="alert">x</button>
+        <%= flash[:notice] %>
+      </div>
+    <%end%>
+    <% if flash[:alert] %>
+      <div class="alert alert-faliure">
+        <button class="close" data-dismiss="alert">x</button>
+        <%= flash[:alert] %>
+      </div>
+    <%end%>
+    </div>
+		<%= yield %>	
+
+
+    <!-- starts footer -->
+
+    <div id = "foot" class = "container-fluid fixed-bottom" >
+        <hr class="soften">
+       <div class="span1 offset5">
+      <a href = "https://www.facebook.com/pages/Sheldon-Cooper/23519525029?hc_location=stream"><%= image_tag("facebook.png", alt: "fb") %></a>
+    </div>
+       <div class="span1 ">
+      <a href = "https://twitter.com/rupeevest"><%= image_tag("twitter.png", alt: "fb") %></a>     
+    </div>
+       <div class="span1">
+      <a href = "https://linkedin.com/pub/raghav-nagarajan/13/a47/b65"><%= image_tag("linkedin.png", alt: "fb") %></a>    
+    </div><br><br><br><br><hr>
+    <h4 align="center">&copy; Rupeevest<h4>
+      
+    <div>
+
+	
+</body>
+</html>
+
