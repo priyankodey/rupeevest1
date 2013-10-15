@@ -3449,10 +3449,15 @@ input[type="submit"].btn.btn-mini {
   min-height: 60px;
   padding-left: 20px;
   padding-right: 20px;
-  background-color: #000000;
+  background-color: #a2afbe;
+  background-image: -moz-linear-gradient(top, #ffffff, #16365c);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#ffffff), to(#16365c));
+  background-image: -webkit-linear-gradient(top, #ffffff, #16365c);
+  background-image: -o-linear-gradient(top, #ffffff, #16365c);
+  background-image: linear-gradient(to bottom, #ffffff, #16365c);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ff049cdb', GradientType=0);
-  border: 1px solid #03719f;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff', endColorstr='#ff16365c', GradientType=0);
+  border: 1px solid #0a192b;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   border-radius: 4px;
@@ -3506,7 +3511,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .divider-vertical {
   height: 60px;
   margin: 0 9px;
-  border-left: 1px solid #049cdb;
+  border-left: 1px solid #16365c;
   border-right: 1px solid #ffffff;
 }
 .navbar .btn,
@@ -3665,7 +3670,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav > .active > a:focus {
   color: #555555;
   text-decoration: none;
-  background-color: #048ac2;
+  background-color: #112a47;
   -webkit-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
   -moz-box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
   box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.125);
@@ -3678,17 +3683,17 @@ input[type="submit"].btn.btn-mini {
   margin-right: 5px;
   color: #ffffff;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-  background-color: #93c9df;
-  background-image: -moz-linear-gradient(top, #f2f2f2, #048ac2);
-  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#048ac2));
-  background-image: -webkit-linear-gradient(top, #f2f2f2, #048ac2);
-  background-image: -o-linear-gradient(top, #f2f2f2, #048ac2);
-  background-image: linear-gradient(to bottom, #f2f2f2, #048ac2);
+  background-color: #98a2ae;
+  background-image: -moz-linear-gradient(top, #f2f2f2, #112a47);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f2f2f2), to(#112a47));
+  background-image: -webkit-linear-gradient(top, #f2f2f2, #112a47);
+  background-image: -o-linear-gradient(top, #f2f2f2, #112a47);
+  background-image: linear-gradient(to bottom, #f2f2f2, #112a47);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ff048ac2', GradientType=0);
-  border-color: #048ac2 #048ac2 #025577;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ff112a47', GradientType=0);
+  border-color: #112a47 #112a47 #02060a;
   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
-  *background-color: #048ac2;
+  *background-color: #112a47;
   /* Darken IE7 buttons by default so they stand out more given they won't have borders */
 
   filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
@@ -3703,12 +3708,12 @@ input[type="submit"].btn.btn-mini {
 .navbar .btn-navbar.disabled,
 .navbar .btn-navbar[disabled] {
   color: #ffffff;
-  background-color: #048ac2;
-  *background-color: #0378a9;
+  background-color: #112a47;
+  *background-color: #0c1e33;
 }
 .navbar .btn-navbar:active,
 .navbar .btn-navbar.active {
-  background-color: #036690 \9;
+  background-color: #07121e \9;
 }
 .navbar .btn-navbar .icon-bar {
   display: block;
@@ -3767,7 +3772,7 @@ input[type="submit"].btn.btn-mini {
 .navbar .nav li.dropdown.open > .dropdown-toggle,
 .navbar .nav li.dropdown.active > .dropdown-toggle,
 .navbar .nav li.dropdown.open.active > .dropdown-toggle {
-  background-color: #048ac2;
+  background-color: #112a47;
   color: #555555;
 }
 .navbar .nav li.dropdown > .dropdown-toggle .caret {
@@ -6221,7 +6226,7 @@ button.close {
   .nav-collapse .nav > li > a:focus,
   .nav-collapse .dropdown-menu a:hover,
   .nav-collapse .dropdown-menu a:focus {
-    background-color: #049cdb;
+    background-color: #16365c;
   }
   .navbar-inverse .nav-collapse .nav > li > a,
   .navbar-inverse .nav-collapse .dropdown-menu a {
@@ -6274,8 +6279,8 @@ button.close {
     float: none;
     padding: 10px 15px;
     margin: 10px 0;
-    border-top: 1px solid #049cdb;
-    border-bottom: 1px solid #049cdb;
+    border-top: 1px solid #16365c;
+    border-bottom: 1px solid #16365c;
     -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
     -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);
     box-shadow: inset 0 1px 0 rgba(255,255,255,.1), 0 1px 0 rgba(255,255,255,.1);

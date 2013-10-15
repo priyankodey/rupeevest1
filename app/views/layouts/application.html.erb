@@ -8,26 +8,25 @@
   
 </head>
 <body>
-	<div class="navbar transparent navbar-fixed-top navbar-inverse" >
+	<div class="navbar navbar-fixed-top navbar-inverse" >
   		<div id= "abc" class="navbar-inner" >
   			<div class ="container-fluid">
-  				<a href = "/static_pages/home" class = "header_logo pull-left"><%= image_tag("logo.jpg", alt: "logo") %></a>
+  				<a href = "/static_pages/home" class = "header_logo pull-left"><%= image_tag("logobig.jpg", alt: "logo") %></a>
   				<ul class = "nav">
   					<li><%= link_to "Why Rupeevest", static_pages_whyus_path %><li>
   					<li><%= link_to "About Us", static_pages_aboutus_path %><li>	
   					<li><%= link_to "Profiler", static_pages_profiler_path %><li>
   					<li><%= link_to "Contact", static_pages_contact_path %><li>
           </ul>
-          <ul class= "nav pull-right">
-            <% if user_signed_in? %>
+          <li id = "inp" class="input-append pull-right">
+            <%= simple_form_for(@visitor) do |f| %> 
+                <%= f.input_field :email, :placeholder => "Email" %>
+                <%= f.button :submit , 'Keep in touch' %>
               
-              <li><%= link_to current_user.email, edit_user_registration_path %></li>
-              <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>   
-            <% else %>
-               <a href="/users/sign_up" class="btn btn-primary">Register</a>
-               <a href="/users/sign_in" class="btn btn-primary">Log In</a> 
             <% end %>
-          </ul>
+          </li>
+            
+        </ul>
   			</div>
   		</div>
   	</div>
@@ -50,6 +49,9 @@
     <%end%>
     </div>
 		<%= yield %>	
+
+
+
 
 
     <!-- starts footer -->

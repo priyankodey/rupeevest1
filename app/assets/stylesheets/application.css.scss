@@ -12,7 +12,7 @@
  *= require_tree .
  */
 body{
-	padding-top: 60px;
+	padding-top: 65px;
 }
 
 .carousel .item {
@@ -62,13 +62,23 @@ hr.soften {
 
 #foot.container-fluid{
 background-image: image-url('black.jpg');
+position: relative;
+width: 100%;
+bottom: 0px;
 
 }
 
 #abc.navbar-inner{
-background-color: #15375C; /* background color will be black for all browsers */
+
   background-image: image-url('black.jpg');
   background-repeat: no-repeat;
   filter: none;
+  max-height: 65px;
 
+}
+
+
+
+#inp{
+  padding-top: 16px;
 }

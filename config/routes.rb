@@ -1,4 +1,6 @@
 Beta1::Application.routes.draw do
+  resources :visitors
+
   devise_for :users
   get "static_pages/home"
   get "static_pages/whyus"
