@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+gem 'heroku'
+
 
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
@@ -31,6 +33,7 @@ gem 'mail'
 group :production do
   gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
+  gem 'thin'
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
