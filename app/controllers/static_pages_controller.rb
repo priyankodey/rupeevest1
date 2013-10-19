@@ -4,14 +4,18 @@ class StaticPagesController < ApplicationController
   end
 
   def whyus
+    @visitor = Visitor.new
   end
 
   def aboutus
+    @visitor = Visitor.new
   end
 
   def profiler
+    @visitor = Visitor.new
   end
 
   def contact
+    @visitor = Visitor.new
   end
 end
