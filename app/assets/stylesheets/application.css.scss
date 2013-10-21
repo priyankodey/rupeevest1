@@ -51,7 +51,7 @@ hr.soften {
 }
 
 #foot.container-fluid{
-background-image: image-url('black.jpg');
+background-image: url(image_path('black.jpg')); 
 position: relative;
 width: 100%;
 bottom: 0px;
