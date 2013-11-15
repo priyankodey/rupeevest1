@@ -37,7 +37,7 @@ Beta1::Application.configure do
     authentication: "plain",
     enable_starttls_auto: true,
     user_name: 'varun11us@gmail.com',
-    password: 'papamummy1234'
+    password: '12333333'
     }
 
 end
