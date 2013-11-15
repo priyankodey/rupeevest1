@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  
+
   def home
     @visitor = Visitor.new
   end
@@ -17,5 +19,12 @@ class StaticPagesController < ApplicationController
 
   def contact
     @visitor = Visitor.new
+  end
+
+  def setup
+    @visitor = Visitor.new
+
+    render :layout=> "layoutformodal"
+     
   end
 end

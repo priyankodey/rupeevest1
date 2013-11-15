@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ 
  */
 body{
 	padding-top: 65px;
@@ -23,6 +24,18 @@ body{
 .carousel .item img {
     width: 100%; /*img width*/
 }
+
+.margless{
+    margin:0 !important;
+}
+
+#long .modal-body {
+  min-height: 900px;
+  min-width: 1000px;
+}
+
+
+
 /*add some makeup*/
 .carousel .carousel-control {
     background: none;
@@ -35,6 +48,8 @@ body{
         margin-left: -80px;
         margin-right: -80px;
     }
+
+
 }
 
 
@@ -50,9 +65,16 @@ hr.soften {
   border: 0;
 }
 
-#foot.container-fluid{
+#foot{
 background-image: url(image_path('black.jpg')); 
-position: relative;
+
+width: 100%;
+bottom: 0px;
+
+}
+#foot2{
+background-image: url(image_path('black.jpg')); 
+
 width: 100%;
 bottom: 0px;
 

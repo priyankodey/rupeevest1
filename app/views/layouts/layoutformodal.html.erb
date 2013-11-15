@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rupeevest</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+  
+</head>
+<body>
+	   <div class="navbar navbar-fixed-top navbar-inverse" >
+      <div id= "abc" class="navbar-inner" >
+        <div class ="container-fluid">
+          <a href = "/static_pages/home" class = "header_logo pull-left"><%= image_tag("logobig.jpg", alt: "logo") %></a>
+          <ul class = "nav">
+          
+            <li><a href="#">Welcome Guest</a><li>
+          </ul>
+          <li id = "inp" class="input-append pull-right">
+            <%= simple_form_for(@visitor) do |f| %> 
+                <%= f.input_field :email, :placeholder => "Email" %>
+                <%= f.button :submit , 'Keep in touch' %>
+              
+            <% end %>
+          </li>
+            
+        </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+		<%= yield %>	
+
+
+        <div id = "foot2" class = "container-fluid fixed-bottom" >
+      
+    <h4 align="center">&copy; Rupeevest<h4>
+      
+    <div>
+
+
+
+
+
+    <!-- starts footer -->
+
+    
+
+	
+</body>
+</html>
+

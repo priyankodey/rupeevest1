@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
 gem 'heroku'
-
+gem 'nokogiri'
 
 # Use sqlite3 as the database for Active Record
 # Use SCSS for stylesheets
@@ -28,7 +28,8 @@ group :test do
 end
 
 gem 'mail'
-
+gem 'finance'
+gem 'flot-rails', :git => "https://github.com/Kjarrigan/flot-rails.git"
 
 group :production do
   gem 'pg', '0.15.1'
@@ -52,6 +53,11 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+gem 'simple_form'
+
+
+gem 'will_paginate'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

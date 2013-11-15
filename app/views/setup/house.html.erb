@@ -1,0 +1,77 @@
+
+
+
+
+<div class="container-fluid" id= "housebackground">
+	<div class="container">
+	<div class="row">
+		<div class="span2" id = "sidebar2">
+			<ul class="nav nav-list " id = "sidebar1" >
+				
+				
+				<li class="disabled">
+					<a href="#">Allocation</a>
+				</li>
+				<li class="disabled">
+					<a href="#"></a>
+				</li>
+				<li class="active">
+					<a href="#">Goals</a>
+				</li>
+				<li class="disabled">
+					<a href="#"></a>
+				</li>
+				<li class="disabled">
+					<a href="#">Analysis</a>
+				</li>
+				<li class="disabled">
+					<a href="#"></a>
+				</li>
+				
+				<li class="disabled">
+					<a href="#">Ask an expert</a>
+				</li>
+				<li class="disabled">
+					<a href="#"></a>
+				</li>
+				<li class="disabled">
+					<a href="#">Downloads</a>
+				</li >
+				<li class="divider">
+				</li>
+				
+			</ul>
+		</div>
+		<div class="span8" id = "hero1">
+			<div class="hero-unit" id="herounitgoal" style="border:solid rgb(37,56,60) 8px">
+			</div>
+			<div id="textgoal">
+				<h3 align="center"><font face="Cambria" color= "black">
+					Tell us more about your goal!</font>
+				</h3>
+				<p>	<%= simple_form_for @analysis do |f| %>
+  						
+					<h4 >
+						<br><br><font face="Calibri" color= "black">
+					<h3>Goal  &nbsp; &nbsp;<%= f.input_field :name, value:'House Savings' %></h3><br>
+					<%= f.hidden_field :type, value: 'LifeGoal'%>
+					I wish to save Rs.<%= f.input_field :goalamount, value: 10000 %> in <%= f.input_field :timeperiod ,value: 3 %> years.<br>
+					I can make an intial deposit of Rs. <%= f.input_field :initialamount,value: 2000 %> and <br>
+					a monthly deposts of Rs.<%= f.input_field :periodicamount,value: 0 %> 
+
+
+					</h4>
+				</p>
+				<p>
+					<h4>
+					On the next screen we will tell you how to achieve your goal.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<%= f.button :submit,'Next' %>
+					</h4></font>
+				</p>	
+					<% end %>
+				
+			</div>
+		</div>
+	</div>
+	</div>
+</div>

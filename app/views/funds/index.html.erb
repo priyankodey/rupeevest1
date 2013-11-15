@@ -1,0 +1,30 @@
+ <head>
+  <title>Rupeevest</title>
+</head>
+
+<table id = "funds12" class = "funds123">
+<thead>
+  <tr>
+    <th>Fund Name</th>
+    <th>Category</th>
+    <th>YTD</th>
+    
+  </tr>
+</thead>
+<tbody>
+  <% @funds.each do |fund| %>
+    <tr>
+      <td><%= link_to "#{fund.scheme_name}", fund_path(fund.id) %><td>
+      <td><%= fund.category %></td>
+      <td><%= fund.fund_ytd %></td>
+    </tr>
+  <% end %>
+ </tbody>
+</table>
+
+
+
+
+
+
+

@@ -1,0 +1,72 @@
+<div class="container-fluid" id= "yieldbackground">
+	<div class="container">
+	<div class="row">
+		<div class="span2" id = "sidebar2">
+			<ul class="nav nav-list " id = "sidebar1" >
+				
+				
+				<li class="disabled">
+					<a href="#">Allocation</a>
+				</li>
+				<li class="disabled">
+					<a href="#"></a>
+				</li>
+				<li class="active">
+					<a href="#">Goals</a>
+				</li>
+				<li class="disabled">
+					<a href="#"></a>
+				</li>
+				<li class="disabled">
+					<a href="#">Analysis</a>
+				</li>
+				<li class="disabled">
+					<a href="#"></a>
+				</li>
+				
+				<li class="disabled">
+					<a href="#">Ask an expert</a>
+				</li>
+				<li class="disabled">
+					<a href="#"></a>
+				</li>
+				<li class="disabled">
+					<a href="#">Downloads</a>
+				</li >
+				<li class="divider">
+				</li>
+				
+			</ul>
+		</div>
+		<div class="span8" id = "hero1">
+			<div class="hero-unit" id="herounitgoal" style="border:solid rgb(37,56,60) 8px">
+			</div>
+			<div id="textgoal">
+				<h3 align="center"><font face="Cambria" color= "black">
+					Tell us more about your goal!</font>
+				</h3>
+				<p>	<%= simple_form_for @analysis do |f| %>
+  						
+					<h4 >
+						<br><font face="Calibri" color= "black">
+					<h3>Goal  &nbsp; &nbsp;<%= f.input_field :name, value:'Fixed Yield' %></h3><br>
+					<%= f.hidden_field :type, value: 'Fixed'%>
+					I am looking to invest Rs.<%= f.input_field :initialamount, value: 10000 %> in an instrument which<br> provides me: <%= f.input_field :tenurefixed, collection: [ "8-9%", "9-10%","10-11%","11-12%"] ,:include_blank => false%>
+					 for : <%= f.input_field :timeperiod ,value: 3 %> years.<br>
+					with a risk rating of <%= f.input_field :generalrisk, collection: [ "very low risk AAA", "risky AA or higher","high risk A or higher"] ,:include_blank => false%>					
+				
+					</h4>
+				</p>
+				<p>
+					<h4>
+					On the next screen we will tell you how to achieve your goal.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<%= f.button :submit,'Next' %>
+					</h4></font>
+				</p>	
+					<% end %>
+				
+			</div>
+		</div>
+	</div>
+	</div>
+</div>

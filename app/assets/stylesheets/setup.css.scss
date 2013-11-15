@@ -1,0 +1,99 @@
+// Place all the styles related to the setup controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.modal-backdrop, 
+.modal-backdrop.fade.in{
+        opacity: 1;
+        filter: alpha(opacity=70);
+        background: #fff;
+}
+
+
+
+
+
+#herounitgoal {
+  
+  height:275px;
+  opacity: .90;
+
+}
+#herounitgoal2 {
+  
+  height:350px;
+  opacity: .90;
+
+}
+
+.nav .active a { background: grey}
+
+#textgoal {
+  position: relative;
+  top: -400px;
+  left: 25px;
+ 
+}
+
+#textgoal2 {
+  position: relative;
+  top: -500px;
+  left: 25px;
+ 
+}
+
+
+
+#sidebar2{
+  padding-top:150px;
+
+  
+}
+
+#sidebar1{
+  background: image-url('black.jpg');
+  
+}
+#housebackground{
+  background: image-url('house2.jpg');
+  min-height: 610px;
+}
+
+#housebackground{
+  background: image-url('house2.jpg');
+  min-height: 610px;
+}
+
+#marriagebackground{
+  background: image-url('marriagebackground.jpg');
+max-height: 650px;
+}
+#goldbackground{
+  background: image-url('goldbackground.jpg');
+  min-height: 610px;
+}
+#otherbackground{
+  background: image-url('Otherbackground.png');
+  min-height: 610px;
+}
+#emergencybackground{
+  background: image-url('emergencybackground.jpg');
+  max-height: 550px;
+}
+#taxfreebackground{
+  background: image-url('taxfreebackground.jpg');
+  min-height: 610px;
+}
+#taxbackground{
+  background: image-url('taxbackground.jpg');
+  min-height: 610px;
+}
+#rgessbackground{
+  background: image-url('rgessbackground.jpg');
+  min-height: 610px;
+}
+
+#yieldbackground{
+  background: image-url('yieldbackground.jpg');
+  min-height: 610px;
+}
