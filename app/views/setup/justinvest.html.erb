@@ -51,7 +51,7 @@
 						<br><font face="Calibri" color= "black">
 					<h3>Goal  &nbsp; &nbsp;<%= f.input_field :name, value:'Fixed Yield' %></h3><br>
 					<%= f.hidden_field :type, value: 'Fixed'%>
-					I am looking to invest Rs.<%= f.input_field :initialamount, value: 10000 %> in an instrument which<br> provides me: <%= f.input_field :tenurefixed, collection: [ "8-9%", "9-10%","10-11%","11-12%"] ,:include_blank => false%>
+					I am looking to invest Rs.<%= f.input_field :initialamount, value: 500000 %> in an instrument which<br> provides me: <%= f.input_field :tenurefixed, collection: [ "8-9%", "9-10%","10-11%","11-12%"] ,:include_blank => false%>
 					 for : <%= f.input_field :timeperiod ,value: 3 %> years.<br>
 					with a risk rating of <%= f.input_field :generalrisk, collection: [ "very low risk AAA", "risky AA or higher","high risk A or higher"] ,:include_blank => false%>					
 				
