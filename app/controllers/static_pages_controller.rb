@@ -24,7 +24,9 @@ class StaticPagesController < ApplicationController
   def setup
     @visitor = Visitor.new
 
-    render :layout=> "layoutformodal"
-     
+    render :layout=> "layoutformodal" 
   end
+
+  
+
 end

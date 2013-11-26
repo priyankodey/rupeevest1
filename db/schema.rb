@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131110024919) do
+ActiveRecord::Schema.define(version: 20131126113758) do
 
   create_table "analyses", force: true do |t|
     t.string   "type"
@@ -26,6 +26,16 @@ ActiveRecord::Schema.define(version: 20131110024919) do
     t.integer  "generalrisk"
     t.integer  "tenuregovt"
     t.integer  "tenurefixed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "freekycs", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.text     "address"
+    t.string   "phone_number"
+    t.string   "pan"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

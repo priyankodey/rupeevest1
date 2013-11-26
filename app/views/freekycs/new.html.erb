@@ -1,0 +1,36 @@
+				
+<div class= "container" id = "freekyc1">
+	<div class = "span6">
+		<%= simple_form_for @freekyc, html: {class: 'form-horizontal' } do |f| %>
+					
+			<h4 >
+				<br><br><br>
+				<font face="Calibri" color= "black">
+				<%= f.input :name, label: 'Name' %>
+				<%= f.input :email, label: 'Email Address' %>
+				<%= f.input :phone_number, label: 'Phone Number' %>
+				<%= f.input :pan,label: 'PAN No.' %>
+				<%= f.input :address,label: 'Address' %>
+				<center>
+				<%= f.button :submit,'Get your Free KYC done' %>
+				 </center>
+				</h4>
+			
+			<% end %>
+	</div>
+	<div class = "span6">
+		<div class = "hero-unit" id = "herofreekyc"><p>
+			<center><h3>FREE Financial KYC service</h3><b4>
+			<h4>(Only in Bangalore)</h4></center>
+			<p align="justify">
+			RupeeVest is happy to launch it's free KYC service in Bangalore. All those people who wish to invest in any Indian financial product need to go through a legal "Know Your Customer" process everytime they invest. So, to make lives easier, 
+			RupeeVest has tied up with a couple of centralized KYC agencies, CAMS and Karvy to store and update your documents, <b>once and for all</b>. <br>
+			 
+			So if you stay in Bangalore and are too lazy to do your KYC yourself, your friend RupeeVest is here to do it for you. Even if you arent lazy, let us know, cos we are too excited to meet you. We will come to your home, and help you through the cumbersome process. Sit, Relax and RupeeVest!  <br>
+			Drop in a your name, email id with your phone number and exact address in Bangalore. We will find you and we will help you. :-)<br><br>
+
+			<b>Happy RupeeVesting!</b></p>
+		</div>
+	</div>
+
+</div></font>
