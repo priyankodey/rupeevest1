@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131203152732) do
+ActiveRecord::Schema.define(version: 20131212113438) do
 
   create_table "analyses", force: true do |t|
     t.string   "type"
@@ -142,7 +142,6 @@ ActiveRecord::Schema.define(version: 20131203152732) do
     t.integer  "no_of_fund_alpha"
     t.date     "risk_measure_date"
     t.string   "no_of_stocks"
-    t.string   "integer"
     t.float    "top_10"
     t.float    "top_5"
     t.float    "top_3_sectors"
