@@ -11,8 +11,12 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery_ujs
+//= require jquery.ui.all
+//= require dataTables/jquery.dataTables
+//= require jquery.dataTables.yadcf.js
 //= require jquery.flot
 //= require jquery.flot.pie
+//= require jquery.flot.canvas.js
 //= require turbolinks
 //= require_tree .
-//= require jquery_ujs

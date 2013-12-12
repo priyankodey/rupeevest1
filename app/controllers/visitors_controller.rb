@@ -30,10 +30,10 @@ class VisitorsController < ApplicationController
       if @visitor.save
 
         VisitorMailer.welcome(@visitor).deliver
-        format.html { redirect_to "/static_pages/home" }
+        format.html { redirect_to "/static_pages/productpage" }
         
       else
-        format.html { redirect_to "/static_pages/home" }
+        format.html { redirect_to "/static_pages/productpage" }
       end
     end
   end

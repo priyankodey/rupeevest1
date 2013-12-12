@@ -4,14 +4,15 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
+  require "omniauth-google-oauth2"
+  config.omniauth :google_oauth2, "285134810130.apps.googleusercontent.com", "lOHPJhfHMfVBB1qL4jOmXSpH", { access_type: "offline", approval_prompt: "" }
   config.secret_key = '5b767edbf29dd5cdbfa2338b9469e59bd5de0ad5836f8427cda1c86f9460947e04a7981e4464b7dca466f1f554f880f6205b595a31fb087bf998e386dc1f39df'
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
-
+  config.mailer_sender = 'info@rupeevest.com'
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

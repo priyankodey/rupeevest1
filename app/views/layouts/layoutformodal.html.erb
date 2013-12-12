@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Rupeevest</title>
+  <title>Invest Online, Manage Financial goals and Save Tax | Gold, Mutual Funds, Bonds, Fixed Deposits
+</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -16,16 +17,20 @@
           
             <li><a href="#">Welcome Guest</a><li>
             <li><%= link_to "Free KYC", new_freekyc_path %><li>  
+               <li><%= link_to "Investment Products", static_pages_productpage_path %><li>
           </ul>
-          <li id = "inp" class="input-append pull-right">
-            <%= simple_form_for(@visitor) do |f| %> 
-                <%= f.input_field :email, :placeholder => "Email" %>
-                <%= f.button :submit , 'Keep in touch' %>
-              
-            <% end %>
-          </li>
-            
-        </ul>
+              <div class="nav-collapse collapse">
+                <ul class="nav pull-right">
+                    
+                <% if user_signed_in? %>
+                  <li><%= link_to current_user.first_name, dashboards_show_path %></li>
+                  <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>   
+                <% else %>
+                  <a href="/users/sign_up" class="btn btn-primary active">Register</a>
+                  <a href="/users/sign_in" class="btn btn-primary active">Log In</a> 
+                <% end %>
+                </ul>
+            </div>
         </div>
       </div>
     </div>

@@ -1,0 +1,16 @@
+				
+
+
+				<%= simple_form_for @freekyc, html: {class: 'form-horizontal' } do |f| %>
+  						
+					<h4 >
+						<br><br><font face="Calibri" color= "black">
+						<%= f.input :name, label: 'Name' %>
+						<%= f.input :email, label: 'Email Address' %>
+						<%= f.input :phone_number, label: 'Phone Number' %>
+						<%= f.input :address,label: 'Address' %>
+						<%= f.button :submit,'Get your Free KYC done' %>
+
+						</h4></font>
+					
+					<% end %>

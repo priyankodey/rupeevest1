@@ -1,0 +1,63 @@
+
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span3">
+			<ul class="nav nav-list">
+				<li class="nav-header">
+					Dashboard
+				</li>
+				<li class="active">
+					<%= link_to "Products Page", static_pages_productpage_path %>
+				</li>
+				<li>
+					<%= link_to "Try Demo", static_pages_setup_path %>
+				</li>
+				<li>
+					<%= link_to "KYC", new_kyc_path %>
+				</li>
+				<li>
+					 <%= link_to "Funds", funds_path %>
+				</li>
+				<li class="nav-header">
+					Banks
+				</li>
+				<li>
+					  <% for bank in current_user.banks %>
+					  <%= link_to "#{bank.name_of_bank}" , edit_bank_path(bank.id) %>
+						<% end %>
+				</li>
+				<li>
+					 <%= link_to "Add a Bank", new_bank_path %>
+				</li>
+				<li class="divider">
+				</li>
+				<li>
+					<%= link_to "Profile", edit_user_registration_path %>
+				</li>
+			</ul>
+		</div>
+		<div class="span9">
+			<div class="hero-unit">
+				<h2 style = "text-align:center">
+					Hello <%= current_user.first_name %>,
+				</h2>
+				<p style = "text-align:justify">
+					<br>
+
+					
+					Welcome to RupeeVest! We promise you, we will make your financial life easier. <br>
+
+					Please check out our teaser videos to understand the revolution RupeeVest are bringing in the Indian financial services. No more agents, no more paperwork.<br>
+
+					We will be up and live soon. Once live, we will find you and we will help you. :-)<br>
+				</p>
+
+				<div class="flex-video widescreen" style="margin: 0 auto;text-align:center;">
+			      <iframe width="320" height="280" frameborder ="1"  style="border:solid rgb(37,56,60) 25px" src="//www.youtube.com/embed/DqrN2kWPzPo?rel=0" frameborder="0" allowfullscreen></iframe>
+			      <iframe width="320" height="280" frameborder ="1"  style="border:solid rgb(37,56,60) 25px" src="//www.youtube.com/embed/e3Se-2rGSww?rel=0" frameborder="0" allowfullscreen></iframe>
+			    </div>
+
+			</div>
+		</div>
+	</div>
+</div>

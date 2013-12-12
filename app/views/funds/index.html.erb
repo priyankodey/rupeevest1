@@ -1,30 +1,186 @@
  <head>
   <title>Rupeevest</title>
-</head>
+<script type="text/javascript">
+  
+ 
+  $(document).ready(function () {
+     
+   oTable = $('#funds12').dataTable({
+        "bJQueryUI": true
 
-<table id = "funds12" class = "funds123">
+
+    }).yadcf([{
+        column_number: 0,
+         filter_type: "auto_complete" ,
+        text_data_delimiter: ","
+    }, {
+        column_number: 1,
+        filter_container_id: "external_filter_container"
+    }, {
+        column_number: 2,
+        filter_type: "range_number_slider"
+    }, {
+        column_number: 3
+    }
+    ]);
+
+
+     
+});
+
+
+
+ 
+
+
+
+
+
+  $(document).ready(function () {
+
+  
+
+
+     
+    oTable = $('#funds13').dataTable({
+        "bJQueryUI": true
+
+    }).yadcf([{
+        column_number: 0,
+         filter_type: "auto_complete" ,
+        text_data_delimiter: ","
+    }, {
+        column_number: 1,
+        filter_container_id: "external_filter_container2"
+    }
+    ]);
+
+
+     
+});
+
+</script>
+
+<script>
+ $('#myTab a').click(function (e) {
+  e.preventDefault();
+  $(this).tab('show');
+})
+</script>
+
+
+
+
+
+
+
+
+
+</head>
+<h1> Funds</h1>
+<ul class="nav nav-tabs" id="myTab">
+
+  <li ><a href="#snapshot" data-toggle="tab" class = "active">Snapshot</a></li>
+  <li><a href="#performance" data-toggle="tab">Performance</a></li>
+</ul>
+ 
+<div class="tab-content">
+  <div class="tab-pane  active" id="snapshot">
+
+
+
+      <div class ="span5" id="external_filter_container_wrapper">
+        <label>Category:</label>
+        <div id="external_filter_container"></div>
+      </div>
+      <div class = "span5">
+        
+           
+            
+      </div>
+      
+ <!-- <%= form_tag investment_dashboards_path, :method => :get  do %> -->
+    <table id = "funds12" class="display">
 <thead>
   <tr>
     <th>Fund Name</th>
     <th>Category</th>
-    <th>YTD</th>
-    
+    <th>Average AUM</th>
+    <th>Risk Rating</th>
+    <th>Expense Ratio</th>
+    <!-- <th>Check</th> -->
   </tr>
 </thead>
 <tbody>
   <% @funds.each do |fund| %>
     <tr>
-      <td><%= link_to "#{fund.scheme_name}", fund_path(fund.id) %><td>
+      <td><%= link_to "#{fund.scheme_name}", fund_path(fund.id) %></td>
+      <td><%= fund.category %></td>
+      <td><%= fund.net_assets %></td>
+      <td><%= fund.colour_code %></td>
+      <td><%= fund.expense_ratio %></td>
+<!--       <td>
+        <%= check_box_tag "fund_ids[]", fund.id %>
+
+</td>
+ -->    </tr>
+  <% end %>
+ </tbody>
+
+</table>
+ <!-- <%= submit_tag "yeah" %> -->
+<% end %>
+
+
+
+  </div>
+  <div class="tab-pane" id="performance">
+<div class ="span5" id="external_filter_container_wrapper">
+        <label>Category:</label>
+        <div id="external_filter_container2"></div>
+      </div>
+      <div class = "span5">
+       
+      </div>
+    <!-- <%= form_tag investment_dashboards_path, :method => :get  do %> -->
+    <table id = "funds13" class="display">
+<thead>
+  <tr>
+    <th>Fund Name</th>
+    <th>Category</th>
+    <th>YTD return</th>
+     <th>3M return</th>
+    <th>1yr return</th> 
+    <th>3yr return</th>
+    <th>5yr return</th>
+    <th>10yr return</th>
+     <!-- <th>Check</th> -->
+  </tr>
+</thead>
+<tbody>
+  <% @funds.each do |fund| %>
+    <tr>
+      <td><%= link_to "#{fund.scheme_name}", fund_path(fund.id) %></td>
       <td><%= fund.category %></td>
       <td><%= fund.fund_ytd %></td>
+      <td><%= fund.fund_3month %></td>
+      <td><%= fund.fund_1year %></td>
+      <td><%= fund.fund_3year %></td>
+      <td><%= fund.fund_5year %></td>
+      <td><%= fund.fund_10year %></td>
+      <!-- <td> <%= check_box_tag "fund_ids[]", fund.id %></td> -->
     </tr>
   <% end %>
  </tbody>
+
 </table>
+  <!-- <%= submit_tag "yeah" %> -->
+<% end %>
 
 
 
+ 
+  </div>
 
-
-
+</div>
 

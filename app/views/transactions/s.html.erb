@@ -1,0 +1,24 @@
+
+<td><%= current_user.kyc.first_name %> <%= current_user.kyc.last_name %></td><br>
+PAN : <td><%= current_user.kyc.pan %></td>
+-------------------------------------------------------------------------------------------------------------------------<br>
+<% @transactions1.each do |transaction| %>
+<table>
+    <tr>
+      <td><%= @funds.find_by_id(transaction.fund_id).scheme_name %></td>
+      <td><%= transaction.bank_id %></td>
+      
+      <td><%= transaction.amount %></td><% @total= @total+ transaction.amount %>
+      <td><%= transaction.option %></td>
+      <td><%= transaction.transaction_type %></td>
+      
+    </tr>
+  </table>
+
+  <% end %>
+   --------------------------------------------------------------------------------------------------------------------------------- <br>
+Total amount =  <%= @total %>
+
+<a href="/transactions/holdings">DO holdings</a>
+
+

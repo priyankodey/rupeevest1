@@ -1,0 +1,16 @@
+
+<%= form_tag create_multiple_transactions_path do %>
+Select Bank <%= select_tag "bankid", options_from_collection_for_select(current_user.banks, "id", "name_of_bank") %><br>
+<% @funds.each do |fund| %>
+<%= fund.scheme_name %><br>	
+<%= hidden_field_tag "transactions[][user_id]", current_user.id %>
+<%= hidden_field_tag "transactions[][fund_id]", fund.id %>
+Amount(in Rs.) <%= number_field_tag "transactions[][amount]", nil %><br>
+Investment Option <%= select_tag "transactions[][option]", options_for_select(["Growth","Dividend Investment","Dividend Payout" ], "Growth") %><br>
+Transaction Type :<%= select_tag "transactions[][transaction_type]", options_for_select(["New","Follow On"], "New") %><br>
+<%= hidden_field_tag "transactions[][transaction_status]", "PrePayement" %>
+----------------------------------------------------------------------------------------------------------------------
+<br>
+<% end %>
+<%= submit_tag "Do Transaction" %>
+<% end %>	

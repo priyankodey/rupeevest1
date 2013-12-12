@@ -1,0 +1,30 @@
+
+ </script>
+<%= simple_form_for @bank , html: {class: 'form-horizontal' } do |f| %>
+			
+  <h2>Banking  Information</h2>
+   
+  	
+  	<%= f.input :name_of_bank , label:'Bank Name'%>
+	<%= f.input :bank_account_num , label:'Account Number' %>
+	<%= f.input :bank_account_type , label:'Account Type',collection: [ "Savings", "Current","Others"],:include_blank => false %>
+	<%= f.input :bank_mode_of_holding, label:'Mode of holding',collection: [ "Single", "Joint"],:include_blank => false %>
+	<%= f.input :bank_first_holder, label:'First Holder' %>
+	<%= f.input :bank_second_holder, label:'Second Holder' %>
+	<%= f.input :bank_branch_address, label:'Branch Address' %>
+	<%= f.input :bank_city, label:'City' %>
+	<%= f.input :bank_ifsc_code, label:'IFSC Code' %>
+	<%= f.input :bank_micr_code, label:'MICR Code' %>
+	<%= f.input :bank_sip_year, label:'Years of validity for SIP mandate' %>
+	<%= f.input :bank_sip_mandate, label:'Maximum Per-day Amount for the mandate' %>
+	
+</div>
+
+	
+  <p><%= f.submit "Save" %></p>
+  
+<% end %>
+
+
+
+	

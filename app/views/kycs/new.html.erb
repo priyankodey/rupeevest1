@@ -1,0 +1,64 @@
+ <script type="text/javascript"> 
+$(document).ready(function() {
+    $('#checkbox1').change(function() {
+        $('#checkboxresult').toggle();
+    });
+});
+
+ </script>
+<%= simple_form_for @kyc , url: kyc_path, html: {class: 'form-horizontal' } do |f| %>
+			
+  <h2>Personal Information</h2>
+  	
+  	<%= f.input :first_name , label:'First Name'%>
+	<%= f.input :last_name , label:'Last Name' %>
+	<%= f.input :father_spouse_name , label:'Father/Spouse Name' %>
+	<%= f.input :marital_status, label:'Marital Status',collection: [ "Single", "Married"],:include_blank => false %>
+	<%= f.input :gender , label:'Gender',collection: [ "Male", "Female"],:include_blank => false %>
+	<%= f.input :date_of_birth, label:'Date of Birth', as: :date, start_year: Date.today.year - 90,
+                              end_year: Date.today.year - 13%>
+	<%= f.input :nationality, label:'Nationality', input_html: { value: 'Indian' } %>
+	<%= f.input :residence_status, label:'Residence Status',collection: [ "Resident", "Non-resident","Foreign National"],:include_blank => false %>
+	<%= f.input :pan , label:'PAN' %>
+	<%= f.input :proof_of_identity, label:'Proof of Identity',collection: [ "UID(Aadhar)", "Passport","Voter ID","Driving License","PAN Card","Others"],:include_blank => false %>
+	 <%= f.input :annual_income, label:'Annual Income',collection: [ "Below 1 Lac", "1-5 Lacs","5-10 Lacs","10-25 Lacs"," >25 Lacs"],:include_blank => false %>
+	<%= f.input :occupation, label:'Occupation',collection: [ "Private Sector Service", "Public Sector","Government Service","Business","Professional","Retired","Student","Forex Dealer","Housewife","Agriculturist","Others"],:include_blank => false %>
+	<%= f.input :pep_status, label:'PEP Status',hint: 'Politically Exposed Person',collection: [ "None", "Politically Exposed Person (PEP)","Related to a Politically Exposed Person (PEP)"],:include_blank => false%>
+
+	<h2>Address Information</h2>
+	<h4>Correspondence Address</h4>
+	<%= f.input :correspondence_address, label:'Address' %>
+	<%= f.input :correspondence_city_town_village, label:'City' %>
+	<%= f.input :correspondence_state, label:'State' %>
+	<%= f.input :correspondence_country, label:'Country' ,priority: [ "India" ] %>
+	<%= f.input :correspondence_postal_code, label:'Postal Code' %>
+	<%= f.input :correspondence_landline, label:'Landline no.' %>
+	<%= f.input :correspondence_mobile, label:'Mobile no.',hint: 'Please fill either landline no. or mobile no.' %>
+	<%= f.input :correspondence_email, label:'Email id' %>
+	<%= f.input :correspondence_proof_of_address, label:'Proof of Address',collection: [ "Passport", "Ration Card","Registered Lease / Sale Agreement of Residence","Driving License","Voter Identity Card","Latest Bank Account Statement/Passbook", "Latest Telephone Bill (only Land Line)","Latest Electricity Bill","Latest Gas Bill","Others(Not more than 3 months old)"],:include_blank => false %>
+
+    
+	<%=f.input :same, hint:'Permanent Address is same as correspondence address', input_html: { id: 'checkbox1' }, label: false,value:true %>
+   <div id="checkboxresult" >
+    
+
+	<h4>Permanent Address</h4>
+	<%= f.input :permanent_address, label:'Address' %>
+	<%= f.input :permanent_city_town_village, label:'City' %>
+	<%= f.input :permanent_state, label:'State' %>
+	<%= f.input :permanent_country, label:'Country'  ,priority: [ "India" ] %>
+	<%= f.input :permanent_postal_code, label:'Postal Code' %>
+	<%= f.input :permanent_landline, label:'Landline no.' %>
+	<%= f.input :permanent_mobile, label:'Mobile no.',hint: 'Please fill either landline no. or mobile no.' %>
+	<%= f.input :permanent_email, label:'Email id' %>
+	<%= f.input :permanent_proof_of_address, label:'Proof of Address',collection: [ "Passport", "Ration Card","Registered Lease / Sale Agreement of Residence","Driving License","Voter Identity Card","Latest Bank Account Statement/Passbook", "Latest Telephone Bill (only Land Line)","Latest Electricity Bill","Latest Gas Bill","Others(Not more than 3 months old)"],:include_blank => false %>
+</div>
+
+	
+  <p><%= f.submit "Save" %></p>
+  
+<% end %>
+
+
+
+	

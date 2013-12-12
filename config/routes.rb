@@ -8,20 +8,37 @@ Beta1::Application.routes.draw do
   get "setup/house"
   get "setup/marriage"
   get "setup/education"
-
-
+  get "transactions/s"
+  post "transactions/s"
+  get "transactions/holdings"
   resources :visitors
   resources :analyses
   resources :freekycs
+  resources :dashboards do 
+    collection do
+      get :investment
+    end
+  end
+  resources :funds 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
-  resources :funds
-  devise_for :users
+  resource :kyc
+  resources :banks
+  resources :transactions do 
+    collection do
+      post :create_multiple
+    end
+  end
   get "static_pages/home"
   get "static_pages/whyus"
   get "static_pages/aboutus"
-  get "static_pages/profiler"
-  get "static_pages/contact"
   get "static_pages/setup"
+  get "static_pages/productpage"
+  get "static_pages/download_pdf1"
+  get "static_pages/download_pdf2"
+  get "static_pages/download_pdf3"
+  get "static_pages/download_pdf4"
+  get "dashboards/show"
 
   root :to => 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.

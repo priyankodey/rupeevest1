@@ -9,7 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
+  *= require dataTables/jquery.dataTables
+  *= require jquery.dataTables.yadcf.css
  *= require_tree .
+  *= require jquery.ui.all
  
  */
 body{
@@ -65,6 +68,8 @@ hr.soften {
   border: 0;
 }
 
+
+
 #foot{
 background-image: url(image_path('black.jpg')); 
 
@@ -74,9 +79,9 @@ bottom: 0px;
 }
 #foot2{
 background-image: url(image_path('black.jpg')); 
-
 width: 100%;
-bottom: 0px;
+position: relative;
+bottom: -25px;
 
 }
 

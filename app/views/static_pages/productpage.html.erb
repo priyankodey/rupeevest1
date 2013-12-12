@@ -1,0 +1,224 @@
+<div class="container">
+  <div class="row-fluid">
+    <div class="span12">
+      <div class="tabbable" id="tabs-890699">
+        <ul class="nav nav-tabs">
+          <li >
+            <a href="#bonds" data-toggle="tab">Bonds</a>
+          </li>
+          <li>
+            <a href="#fixeddeposit" data-toggle="tab">Fixed Deposit</a>
+          </li>
+          <li><%= link_to "Mutual Funds", funds_path %><li>
+        </ul>
+        <div class="tab-content">
+          <div class="tab-pane active" id="bonds">
+            <div class="container-fluid">
+              <div class="row-fluid">
+                <div class="span12">
+                  <h3 class="text-left text-info">
+                   <u>Tax Free Bonds</u>
+                  </h3>
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        
+                        <th>Issue</th>
+                        <th>Open Date</th>
+                        <th>Close Date</th>
+                        <th>Risk Profile</th>
+                        <th>Product Type</th>
+                        <th>Rating</th>
+                        <th>10 yr (Retail)</th>
+                        <th>15 yr (Retail)</th>
+                        <th>20 yr (Retail)</th>
+                        <th>10,15,20 yr (Others)</th>
+                        <th>Product Details</th>
+                       </tr>
+                    </thead>
+                    <tbody>
+                        <tr class = "info">
+                        
+                        <td>HUDCO</td>
+                        <td>Dec 2nd, 2013</td>
+                        <td>Jan 10th, 2013</td>
+                        <td>Low Risk</td>
+                        <td>Govt. Bonds</td>
+                        <td>CARE AA+</td>
+                        <td>8.76%</td>
+                        <td>8.83%</td>
+                        <td>9.01%</td>
+                        <td>0.25%</td>
+                        <td><% if user_signed_in? %>
+                            <a href= "/static_pages/download_pdf1" class="btn btn-primary active">
+                            Download</a>
+                            <% else %>
+                            <a href="/users/sign_up" class="btn btn-primary active">Sign up to Download</a>
+                             
+                          <% end %></td>
+                         
+                      </tr>
+                      <tr class = "info">
+                        
+                        <td>IIFCL</td>
+                        <td>Dec 9th, 2013</td>
+                        <td>Jan 10th, 2013</td>
+                        <td>Low Risk</td>
+                        <td>Govt. Bonds</td>
+                        <td>CARE/ICRA AAA</td>
+                        <td>8.66%</td>
+                        <td>8.73%</td>
+                        <td>8.91%</td>
+                        <td>0.25%</td>
+                        <td><% if user_signed_in? %>
+                            <a href= "/static_pages/download_pdf2" class="btn btn-primary active">
+                            Download</a>
+                            <% else %>
+                            <a href="/users/sign_up" class="btn btn-primary active">Sign up to Download</a>
+                             
+                          <% end %></td>
+                         
+                      </tr>
+                       
+                     
+                     
+                    </tbody>
+                  </table>
+                  <h3 class="text-left text-info">
+                   <u>NCDS</u>
+                  </h3>
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                      <tr>
+                        <th>Issue</th>
+                        <th>Open Date</th>
+                        <th>Close Date</th>
+                        <th>Risk Profile</th>
+                        <th>Product Type</th>
+                        <th>Rating</th>
+                        <th>3 yr (Retail)</th>
+                        <th>4 yr (Retail)</th>
+                        <th>5 yr (Retail)</th>
+                        <th>3,4,5 yr (Others)</th>
+                        <th>Product Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class = "info">
+                        <td>Shriram City Union Finance</td>
+                        <td>Nov 25th, 2013</td>
+                        <td>Dec 24th, 2013</td>
+                        <td>Medium-Risk</td>
+                        <td>Private Bonds</td>
+                        <td>CARE AA</td>
+                        <td>11%</td>
+                        <td>11.25%</td>
+                        <td>11.50%</td>
+                        <td>10.75%</td>
+                             <td><% if user_signed_in? %>
+                            <a href= "/static_pages/download_pdf3" class="btn btn-primary active">
+                            Download</a>
+                            <% else %>
+                            <a href="/users/sign_up" class="btn btn-primary active">Sign up to Download</a>
+                             
+                          <% end %></td>
+                      </tr>
+                      <tr class = "info">
+                        <td>India Infoline Housing Finance</td>
+                        <td>Dec 12th, 2013</td>
+                        <td>Dec 20th, 2013</td>
+                        <td>Medium-Risk</td>
+                        <td>Private Bonds</td>
+                        <td>Crisil AA-</td>
+                        <td></td>
+                        <td></td>
+                        <td>11.52%</td>
+                        <td></td>
+                             <td><% if user_signed_in? %>
+                            <a href= "/static_pages/download_pdf4" class="btn btn-primary active">
+                            Download</a>
+                            <% else %>
+                            <a href="/users/sign_up" class="btn btn-primary active">Sign up to Download</a>
+                             
+                          <% end %></td>
+                      </tr> 
+                     
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="fixeddeposit">
+            <h3 class="text-left text-info">
+                   Corporate Fixed Deposits
+                  </h3>
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                      <tr >
+                        
+                        <th>Company Name</th>
+                        <th>Interest Rate</th>
+                        <th>Tenure</th>
+                        <th>Minimum Investment (Rs.)</th>
+                        
+                       </tr>
+                    </thead>
+                    <tbody>
+                       <tr class = "info">
+                        
+                        <td>Housing Development Finance Corporations Ltd</td>
+                        <td>09.15% to 9.49%</td>
+                        <td>55 months to 95 months</td>
+                        <td>20,000</td>
+                      </tr>
+                        
+                      
+                      <tr class = "info">
+                        
+                        <td>PNB Housing Finance Ltd</td>
+                        <td>9.15% to 09.50%</td>
+                        <td>12 mnths to 120 mnths</td>
+                        <td>20,000</td>
+                      </tr>
+                        
+                      <tr class = "info">
+                        
+                        <td>Mahindra & Mahindra Limited</td>
+                        <td>8.50% to 9.75%</td>
+                        <td>1 yr to 3 yrs</td>
+                        <td>25,000 </td>
+                       
+                         
+                      </tr>
+                       <tr class = "info">
+                        
+                        <td>Shriram Transport Finance Company Ltd.</td>
+                        <td>8.88% to 10.75%</td>
+                        <td>1 yr to 5 yrs</td>
+                        <td>5,000</td>
+
+
+
+                      </tr>
+                        
+                      <tr class = "info">
+                        
+                        <td>Mahindra & Mahindra Financial Services Limited</td>
+                        <td>8.50% to 9.75%</td>
+                        <td>1 yr to 3 yrs</td>
+                        <td>25,000</td>
+                       
+                         
+                      </tr>
+                        
+                     
+                     
+                    </tbody>
+                  </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

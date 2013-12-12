@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131126113758) do
+ActiveRecord::Schema.define(version: 20131203152732) do
 
   create_table "analyses", force: true do |t|
     t.string   "type"
@@ -26,6 +26,25 @@ ActiveRecord::Schema.define(version: 20131126113758) do
     t.integer  "generalrisk"
     t.integer  "tenuregovt"
     t.integer  "tenurefixed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "banks", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name_of_bank"
+    t.string   "bank_account_num"
+    t.string   "bank_account_type"
+    t.string   "bank_mode_of_holding"
+    t.string   "bank_first_holder"
+    t.string   "bank_second_holder"
+    t.string   "bank_branch_address"
+    t.string   "bank_city"
+    t.string   "bank_ifsc_code"
+    t.string   "bank_micr_code"
+    t.integer  "bank_sip_mandate_status"
+    t.integer  "bank_sip_year"
+    t.integer  "bank_sip_mandate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -175,6 +194,69 @@ ActiveRecord::Schema.define(version: 20131126113758) do
     t.datetime "updated_at"
   end
 
+  create_table "holdings", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "fund_id"
+    t.integer  "transaction_id"
+    t.integer  "units"
+    t.float    "buy_value"
+    t.float    "current_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "kycs", force: true do |t|
+    t.integer  "user_id"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "father_spouse_name"
+    t.string   "gender"
+    t.string   "marital_status"
+    t.date     "date_of_birth"
+    t.string   "nationality"
+    t.string   "residence_status"
+    t.string   "pan"
+    t.string   "proof_of_identity"
+    t.text     "correspondence_address"
+    t.string   "correspondence_city_town_village"
+    t.string   "correspondence_state"
+    t.string   "correspondence_country"
+    t.string   "correspondence_postal_code"
+    t.string   "correspondence_landline"
+    t.string   "correspondence_mobile"
+    t.string   "correspondence_email"
+    t.string   "correspondence_proof_of_address"
+    t.boolean  "same"
+    t.text     "permanent_address"
+    t.string   "permanent_city_town_village"
+    t.string   "permanent_state"
+    t.string   "permanent_country"
+    t.string   "permanent_postal_code"
+    t.string   "permanent_landline"
+    t.string   "permanent_mobile"
+    t.string   "permanent_email"
+    t.string   "permanent_proof_of_address"
+    t.float    "annual_income"
+    t.string   "occupation"
+    t.string   "pep_status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "transactions", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "bank_id"
+    t.integer  "fund_id"
+    t.string   "option"
+    t.string   "transaction_type"
+    t.float    "amount"
+    t.float    "price_per_unit"
+    t.string   "transaction_status"
+    t.string   "folio_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -194,6 +276,8 @@ ActiveRecord::Schema.define(version: 20131126113758) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "unconfirmed_email"
+    t.integer  "kyc_status"
+    t.integer  "bank_status"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

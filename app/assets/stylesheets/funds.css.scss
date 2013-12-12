@@ -1,3 +1,45 @@
 // Place all the styles related to the funds controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the funds controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#sidebar {
+background-color: #000;
+height: 120%;
+padding: 0;
+position: fixed;
+right: 0;
+top: 0;
+width: 150px;
+opacity:1;
+
+
+}
+
+#sidebarelements{
+	padding-top: 125px;
+	font-size:100%;
+
+}
+
+#sidebarelement{
+	padding-top: 50px;
+}
+
+#sidebarelement:hover {
+    background-color: #0F0F5E;
+    
+
+}
+
+
+
+
+#bodyshowfund{
+	background-color: rgba(0, 0, 0,.2);
+
+}
