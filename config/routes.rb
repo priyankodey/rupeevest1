@@ -1,4 +1,5 @@
 Beta1::Application.routes.draw do
+  get "camsfeeds/index"
   get "setup/c80"
   get "setup/rgess"
   get "setup/bonds"
@@ -11,6 +12,7 @@ Beta1::Application.routes.draw do
   get "transactions/s"
   post "transactions/s"
   get "transactions/holdings"
+  get "transactions/ru"
   resources :visitors
   resources :analyses
   resources :freekycs
@@ -29,6 +31,14 @@ Beta1::Application.routes.draw do
       post :create_multiple
     end
   end
+
+
+  resources :camsfeeds do 
+    collection do 
+      post :import
+    end
+  end
+
   get "static_pages/home"
   get "static_pages/whyus"
   get "static_pages/aboutus"

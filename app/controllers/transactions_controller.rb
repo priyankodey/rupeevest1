@@ -32,4 +32,8 @@ helper_method :createholdings
   	
   end
 
+  def ru
+
+  end
+
 end

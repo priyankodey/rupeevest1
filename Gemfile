@@ -20,6 +20,7 @@ gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
 gem 'jquery-ui-rails'
 gem 'omniauth-google-oauth2'
 gem 'country_select'
+gem 'roo'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

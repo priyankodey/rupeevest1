@@ -56,13 +56,13 @@
                         [5, "5Yr Return"]
                     ],
                     tickLength: 0,
-                    axisLabel: "Time Period",
+                    axisLabel: " Tenure (in years)",
                     axisLabelUseCanvas: true,
                     axisLabelFontSizePixels: 12,
                     axisLabelFontFamily: "Verdana, Arial, Helvetica, Tahoma, sans-serif",
                     axisLabelPadding: 5
                 }, yaxis: {
-                    axisLabel: "Return (in %)",
+                    axisLabel: "Annualized return (in %age)",
                     tickDecimals: 0,
                     axisLabelUseCanvas: true,
                     axisLabelFontSizePixels: 12,
@@ -160,7 +160,7 @@
     <style type="text/css">
         #placeholder {
             width: 800px;
-            height: 400px;
+            height: 500px;
             position: relative;
             margin: 0 auto;
         }
@@ -217,9 +217,10 @@
     
     <!-- #intro -->
 	<div class="container" >
+		<center><h1><%= @fund.scheme_name %> Snapshot</h1></center>
 		<div class="container" id="generaldetails">	
 			<div class = "container" >
-				<h2>General Details</h2>
+				<h3>General Details</h3>
 			<div class="row span5">
 				<table class="table table-striped table-bordered">
 				  <tr>
@@ -281,7 +282,7 @@
      <!-- #about -->
 <div class="container" id="performance">	
 			<div class = "container">
-				<h2>Performance</h2>
+				<h3>Performance</h3>
 			<div class="row span8 center offset1">
 				<table class="table table-striped table-bordered">
 					<thead>
@@ -363,7 +364,7 @@
       <!-- #team -->    
 <div class="container" id="investmentdetails">
 	<div class="container">
-		<h2>Investment Details</h2>
+		<h3>Investment Details</h3>
 		
 			<div class="row span5">
 				<h3>Amount</h3>
@@ -396,7 +397,7 @@
 				<table class="table table-striped table-bordered">
 				  <tr>
 				  	<td>Indian</td>
-				  	<td>Db entry req</td>
+				  	<td>Yes</td>
 				  	
 				  </tr>
 				  <tr>
@@ -406,7 +407,7 @@
 				  </tr>
 				  <tr>
 				  	<td>HUF</td>
-				  	<td>Db entry req</td>
+				  	<td>Yes</td>
 				  	
 				  </tr>
 				  
@@ -425,21 +426,22 @@
       <!-- #contact -->   	
 	<div class="container" id="risk">
 	<div class="container">
-		<h2>Risk</h2>	
+		<h3>Risk</h3>	
 		<div class="row span8 center offset2">
 				<table class="table table-striped table-bordered">
 				  <tr>
 				  	<td>Colour Code</td>
 				  	<td>Risk Rating</td>
-				   	<td>Standard Deviation</td>
-				  	<td>Rank</td>
+				   	
 				  	
 				  </tr>
 				  <tr>
 				  	<td><%= @fund.colour_code %></td>
-				  	<td>Db Entry req</td>
-				  	<td>Db Entry req</td>
-				  	<td>Db Entry req</td>
+				  	<td><% if @fund.colour_code == "Brown" %>High Risk<%end%>
+				  		<% if @fund.colour_code == "Yellow" %>Medium Risk<%end%>
+				  		<% if @fund.colour_code == "Blue" %>Low Risk<%end%>
+				  		</td>
+				  	
 				  	
 				  </tr>
 				  
