@@ -99,7 +99,7 @@
             
       </div>
       
- <!-- <%= form_tag investment_dashboards_path, :method => :get  do %> -->
+<!--  <%= form_tag investment_dashboards_path, :method => :get  do %>  -->
     <table id = "funds12" class="display">
 <thead>
   <tr>
@@ -108,7 +108,7 @@
     <th>Average AUM</th>
     <th>Risk Rating</th>
     <th>Expense Ratio</th>
-    <!-- <th>Check</th> -->
+ <!--    <th>Check</th> --> 
   </tr>
 </thead>
 <tbody>
@@ -119,17 +119,17 @@
       <td><%= fund.net_assets %></td>
       <td><%= fund.colour_code %></td>
       <td><%= fund.expense_ratio %></td>
-<!--       <td>
+     <!--   <td>
         <%= check_box_tag "fund_ids[]", fund.id %>
 
-</td>
- -->    </tr>
+</td> -->
+    </tr>
   <% end %>
  </tbody>
 
 </table>
- <!-- <%= submit_tag "yeah" %> -->
-<% end %>
+ <!-- <%= submit_tag "yeah" %>   -->
+<!-- <% end %>  -->
 
 
 
@@ -142,7 +142,7 @@
       <div class = "span5">
        
       </div>
-    <!-- <%= form_tag investment_dashboards_path, :method => :get  do %> -->
+    <!--  <%= form_tag investment_dashboards_path, :method => :get  do %>  -->
     <table id = "funds13" class="display">
 <thead>
   <tr>
@@ -154,7 +154,7 @@
     <th>3yr return</th>
     <th>5yr return</th>
     <th>10yr return</th>
-     <!-- <th>Check</th> -->
+  <!--  <th>Check</th> --> 
   </tr>
 </thead>
 <tbody>
@@ -168,14 +168,14 @@
       <td><%= fund.fund_3year %></td>
       <td><%= fund.fund_5year %></td>
       <td><%= fund.fund_10year %></td>
-      <!-- <td> <%= check_box_tag "fund_ids[]", fund.id %></td> -->
+      <!-- <td> <%= check_box_tag "fund_ids[]", fund.id %></td>  -->
     </tr>
   <% end %>
  </tbody>
 
 </table>
-  <!-- <%= submit_tag "yeah" %> -->
-<% end %>
+<!-- <%= submit_tag "yeah" %>
+<% end %> -->
 
 
 

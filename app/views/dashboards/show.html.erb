@@ -18,12 +18,18 @@
 				<li>
 					 <%= link_to "Funds", funds_path %>
 				</li>
+				<% if current_user.try(:admin?) %>
+				<li>
+					<%= link_to "Mandate", banks_mandate_path(format: "xls") %>
+				</li>
+				<% end %>
 				<li class="nav-header">
 					Banks
 				</li>
 				<li>
 					  <% for bank in current_user.banks %>
-					  <%= link_to "#{bank.name_of_bank}" , edit_bank_path(bank.id) %>
+					  <%= link_to " #{bank.name_of_bank}" , bank_path(bank.id) %>
+					  <%= link_to "Edit #{bank.name_of_bank}" , edit_bank_path(bank.id) %>
 						<% end %>
 				</li>
 				<li>

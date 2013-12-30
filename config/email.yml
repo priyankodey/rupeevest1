@@ -1,15 +1,15 @@
 development:
-  :address: smtp.rupeevest.com
-  :port: 25
+  :address: "smtp.live.com"
+  :port: 587
   :authentication: plain
   :user_name: info@rupeevest.com
-  :password: varuraghinf1
-  :enable_starttls_auto: false        
+  :password: betterment1234
+  :enable_starttls_auto: true        
 
 production:
-  :address: smtp.rupeevest.com
-  :port: 25
+   :address: "smtp.live.com"
+  :port: 587
   :authentication: plain
   :user_name: info@rupeevest.com
-  :password: varuraghinf1
-  :enable_starttls_auto: false
+  :password: betterment1234
+  :enable_starttls_auto: true 

@@ -8,7 +8,7 @@ PAN : <td><%= current_user.kyc.pan %></td>
       <td><%= @funds.find_by_id(transaction.fund_id).scheme_name %></td>
       <td><%= transaction.bank_id %></td>
       
-      <td><%= transaction.amount %></td><% @total= @total+ transaction.amount %>
+      <td><%= transaction.amount %></td>
       <td><%= transaction.option %></td>
       <td><%= transaction.transaction_type %></td>
       
@@ -17,8 +17,33 @@ PAN : <td><%= current_user.kyc.pan %></td>
 
   <% end %>
    --------------------------------------------------------------------------------------------------------------------------------- <br>
-Total amount =  <%= @total %>
+Total amount =  <%= @total %><br>
 
-<a href="/transactions/holdings">DO holdings</a>
+--------------------------------------------------------------------------------------------------------------------------------
+<br>
+<% if @transactions1.first.transaction_type == 'SIP' %>
+
+<%= form_tag transactions_ru_path do %>
+
+<%= hidden_field_tag "msgsip", @msgsip %>
+
+<%= submit_tag "Payement gateway" %>
+<% end %> 
+
+<% else %>
+
+
+
+<%= form_tag transactions_ru_path do %>
+
+<%= hidden_field_tag "msg", @msg %>
+
+<%= submit_tag "Payement gateway" %>
+<% end %> 
+<% end %>
+
+
+
+<!-- <a href="/transactions/holdings">DO holdings</a> -->
 
 

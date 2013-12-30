@@ -1,0 +1,32 @@
+  <% i=1 %>
+<table>
+  <tr>
+    <th>S.No</th>
+    <th>Unique Mandate Registration No (UMRN)</th>
+    <th>Investor Name</th>
+    <th>Bank Account Holder Name</th>
+    <th>Bank Account No</th>
+    <th>Bank Account Type</th>
+    <th>MICR</th>
+    <th>Upper Limit Amount</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+  </tr>
+  <% @banks.each do |bank| %>
+
+  <tr>
+    <td><%= i %></td>
+    <td><%= bank.umrn %></td>
+    <td><%= bank.bank_first_holder %></td>
+    <td><%= bank.bank_first_holder %></td>
+    <td><%= bank.bank_account_num %></td>
+    <td><%= bank.bank_account_type %></td>
+    <td><%= bank.bank_micr_code %></td>
+    <td><%= bank.bank_sip_mandate %></td>
+    <td><%= bank.updated_at.to_date %></td>
+    <td><%= bank.updated_at.to_date + bank.bank_sip_year.years %></td>
+  </tr>
+  <% i=i+1 %>
+  <% end %>
+</table>
+

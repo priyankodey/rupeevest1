@@ -1,1 +1,15 @@
 <h3> Redirect URL </h3>
+Our msg :<br>
+<%= params[:msg] %>
+<%= params[:msgsip] %>
+<br>
+
+Their msg:<br>
+<%= form_tag transactions_confirmation_path do %>
+
+<%= text_field_tag "msgpg" %>
+
+<%= submit_tag "Recieve msg" %>
+<% end %> 
+
+<br>

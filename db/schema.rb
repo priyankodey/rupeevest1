@@ -11,7 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131217062651) do
+ActiveRecord::Schema.define(version: 20131230004811) do
+
+  create_table "admins", force: true do |t|
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          default: 0,  null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
   create_table "analyses", force: true do |t|
     t.string   "type"
@@ -26,6 +44,13 @@ ActiveRecord::Schema.define(version: 20131217062651) do
     t.integer  "generalrisk"
     t.integer  "tenuregovt"
     t.integer  "tenurefixed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "banklist", force: true do |t|
+    t.string   "bid"
+    t.string   "bank_name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -47,6 +72,9 @@ ActiveRecord::Schema.define(version: 20131217062651) do
     t.integer  "bank_sip_mandate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "umrn"
+    t.string   "reason"
+    t.string   "bankid_pg"
   end
 
   create_table "camsfeeds", force: true do |t|
@@ -117,9 +145,7 @@ ActiveRecord::Schema.define(version: 20131217062651) do
   create_table "freekycs", force: true do |t|
     t.string   "name"
     t.string   "email"
-    t.text     "address"
     t.string   "phone_number"
-    t.string   "pan"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -131,8 +157,7 @@ ActiveRecord::Schema.define(version: 20131217062651) do
     t.integer  "min_investment"
     t.string   "exit_load"
     t.float    "net_assets"
-    t.float    "growth_nav"
-    t.float    "dividend_nav"
+    t.float    "nav"
     t.string   "category"
     t.float    "expense_ratio"
     t.string   "colour_code"
@@ -256,6 +281,12 @@ ActiveRecord::Schema.define(version: 20131217062651) do
     t.string   "fund_manager"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "amc"
+    t.string   "amc_code"
+    t.string   "amfi_code"
+    t.string   "scheme_code_pg"
+    t.string   "prodcode"
+    t.string   "fund_type"
   end
 
   create_table "holdings", force: true do |t|
@@ -307,6 +338,34 @@ ActiveRecord::Schema.define(version: 20131217062651) do
     t.datetime "updated_at"
   end
 
+  create_table "msgfrompgs", force: true do |t|
+    t.integer  "user_id"
+    t.string   "order_number"
+    t.float    "amount"
+    t.text     "msgpg"
+    t.string   "auth_status"
+    t.string   "error"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "msgtopgs", force: true do |t|
+    t.integer  "user_id"
+    t.string   "order_number"
+    t.float    "amount"
+    t.text     "msg"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "taxsavings", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "phone_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "transactions", force: true do |t|
     t.integer  "user_id"
     t.integer  "bank_id"
@@ -319,17 +378,29 @@ ActiveRecord::Schema.define(version: 20131217062651) do
     t.string   "folio_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "billdesk_trnx_no"
+    t.string   "transaction_status_reason"
+    t.string   "order_number"
+    t.string   "checksum"
+    t.string   "liq_non"
+    t.string   "error_status"
+    t.string   "error_desc"
+    t.string   "auth_status"
+    t.float    "transaction_charges"
+    t.string   "arn_code"
+    t.date     "t_date"
+    t.integer  "sip_months"
   end
 
   create_table "users", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -342,6 +413,7 @@ ActiveRecord::Schema.define(version: 20131217062651) do
     t.string   "unconfirmed_email"
     t.integer  "kyc_status"
     t.integer  "bank_status"
+    t.boolean  "admin",                  default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true

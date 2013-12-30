@@ -1,4 +1,5 @@
 Beta1::Application.routes.draw do
+  
   get "camsfeeds/index"
   get "setup/c80"
   get "setup/rgess"
@@ -13,9 +14,12 @@ Beta1::Application.routes.draw do
   post "transactions/s"
   get "transactions/holdings"
   get "transactions/ru"
+  post "transactions/ru"
+  post "transactions/confirmation"
+  get "banks/mandate"
   resources :visitors
   resources :analyses
-  resources :freekycs
+  resources :taxsavings
   resources :dashboards do 
     collection do
       get :investment
@@ -29,6 +33,7 @@ Beta1::Application.routes.draw do
   resources :transactions do 
     collection do
       post :create_multiple
+
     end
   end
 
