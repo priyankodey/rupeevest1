@@ -2,7 +2,14 @@
 <meta property="og:url" content="http://www.rupeevest.com/taxsavings/new" />
 <meta property="og:description" content="Free Door to Door Tax investment service for the first time in Bangalore" />
 <meta property="fb:app_id" content="1396935530538335" />
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1396935530538335";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <div class= "container-fluid" >
 	
@@ -41,10 +48,7 @@ RupeeVest has been founded by alumni of IIT to make investing super simple and e
 				<%= f.input :phone_number, label: 'Phone Number' %>
 				
 				<p align = "right">
-				<a href="http://www.facebook.com/sharer.php?s=100
-					&p[url]=http://www.rupeevest.com/taxsavings/new
-					&p[title]=Save Tax!!
-					&p[summary]=RupeeVest just helped me save tax this year,sitting at my home :-)!"target="_blank" class="btn btn-primary active">Share on Facebook</a>	
+				<div class="fb-share-button" data-href="http://www.rupeevest.com/taxsavings/new" data-type="button_count"></div>	
 									
 				<%= f.button :submit,'Get your Tax Saving done', :class => "btn btn-success"  %>
 				 </p>
