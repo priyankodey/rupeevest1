@@ -12,7 +12,8 @@
   *= require dataTables/jquery.dataTables
   *= require jquery.dataTables.yadcf.css
  *= require_tree .
-  *= require jquery.ui.all
+ *= require social-share-button
+  
  
  */
 body{
@@ -94,9 +95,10 @@ width: 100%;
 
   background-image: image-url('black.jpg');
   background-repeat: no-repeat;
+  background-color:#0E0E0E !important;
   filter: none;
   max-height: 65px;
-
+  
 }
 
 #inp{
@@ -111,3 +113,10 @@ width: 100%;
   width: 100%;
   bottom: 0px;
 }
+
+#footer{
+   padding-top: 65px;
+   margin-bottom: -25px !important;
+   
+}
+

@@ -1,6 +1,6 @@
 class ChangeFunds < ActiveRecord::Migration
   change_table :funds do |t|
-  	  
+  	  t.remove :dividend_nav, :name
 	  t.string :amc
 	  t.string :amc_code
 	  t.string :amfi_code

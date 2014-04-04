@@ -22,14 +22,17 @@ $(document).ready(function() {
 	<%= f.input :pan , label:'PAN' %>
 	<%= f.input :proof_of_identity, label:'Proof of Identity',collection: [ "UID(Aadhar)", "Passport","Voter ID","Driving License","PAN Card","Others"],:include_blank => false %>
 	 <%= f.input :annual_income, label:'Annual Income',collection: [ "Below 1 Lac", "1-5 Lacs","5-10 Lacs","10-25 Lacs"," >25 Lacs"],:include_blank => false %>
-	<%= f.input :occupation, label:'Occupation',collection: [ "Private Sector Service", "Public Sector","Government Service","Business","Professional","Retired","Student","Forex Dealer","Housewife","Agriculturist","Others"],:include_blank => false %>
+	<%= f.input :occupation, label:'Occupation',collection: [ "Service","Business","Student","Household",       "Professional","Farmer","Retired","Others"],:include_blank => false %>
 	<%= f.input :pep_status, label:'PEP Status',hint: 'Politically Exposed Person',collection: [ "None", "Politically Exposed Person (PEP)","Related to a Politically Exposed Person (PEP)"],:include_blank => false%>
 
 	<h2>Address Information</h2>
+
 	<h4>Correspondence Address</h4>
-	<%= f.input :correspondence_address, label:'Address' %>
-	<%= f.input :correspondence_city_town_village, label:'City' %>
-	<%= f.input :correspondence_state, label:'State' %>
+	<%= f.input :c_house_no, label:'House Number' %>
+	<%= f.input :c_street_name, label:'Street Name' %>
+	<%= f.input :c_area_name, label:'Area Name' %>
+	<%= f.input :correspondence_city_town_village, label:'City' ,collection: ["Agra",	"Ahmedabad",	"Ajmer",	"Allahabad",	"Amritsar",	"Anand",	"Asansol",	"Aurangabad",	"Bangalore",	"Baroda",	"Bharuch",	"Bhavnagar",	"Bhopal",	"Bhubaneswar",	"Calicut",	"Chandigarh",	"Chennai",	"Coimbatore",	"Dehradun",	"Dharwad",	"Dubai",	"Durgapur",	"Erode",	"Guntur",	"Guwahati",	"Hubli",	"Hyderabad",	"Indore",	"Jaipur",	"Jalandhar",	"Jalgaon",	"Jamnagar",	"Jamshedpur",	"Jodpur",	"Kanpur",	"Karaikudi",	"Kochi",	"Kolkata",	"Kota",	"Kottayam",	"Lucknow",	"Ludhiana",	"Mangalore",	"Meerut",	"Moradabad",	"Mumbai",	"Mysore",	"Nagpur",	"Nasik",	"New Delhi",	"Panjim",	"Patna",	"Pondicherry",	"Pune",	"Raipur",	"Rajahmundry",	"Rajkot",	"Ranchi",	"Salem",	"Siliguri",	"Surat",	"Tirunelveli",	"Tirupur",	"Trichy",	"Trivandrum",	"Udaipur",	"Varanasi",	"Vashi",	"Vijayawada",	"Others"] %>
+	<%= f.input :correspondence_state, label:'State',collection: ["Andhra Pradesh",	"Arunachal Pradesh",	"Assam",	"Bihar",	"Chandigarh",	"Delhi",	"Goa",	"Gujarat",	"Haryana",	"Himachal Pradesh",	"Jammu And Kashmir",	"Karnataka",	"Kerala",	"Madhya Pradesh",	"Maharashtra",	"Manipur",	"Meghalaya",	"Mizoram",	"Nagaland",	"Orissa",	"Punjab",	"Rajasthan",	"Tamil Nadu",	"Tripura",	"Uttar Pradesh",	"West Bengal",	"Others"] %>
 	<%= f.input :correspondence_country, label:'Country' ,priority: [ "India" ] %>
 	<%= f.input :correspondence_postal_code, label:'Postal Code' %>
 	<%= f.input :correspondence_landline, label:'Landline no.' %>
@@ -42,10 +45,13 @@ $(document).ready(function() {
    <div id="checkboxresult" >
     
 
+
 	<h4>Permanent Address</h4>
-	<%= f.input :permanent_address, label:'Address' %>
-	<%= f.input :permanent_city_town_village, label:'City' %>
-	<%= f.input :permanent_state, label:'State' %>
+	<%= f.input :p_house_no, label:'House Number' %>
+	<%= f.input :p_street_name, label:'Street Name' %>
+	<%= f.input :p_area_name, label:'Area Name' %>
+	<%= f.input :permanent_city_town_village, label:'City',collection: ["Agra",	"Ahmedabad",	"Ajmer",	"Allahabad",	"Amritsar",	"Anand",	"Asansol",	"Aurangabad",	"Bangalore",	"Baroda",	"Bharuch",	"Bhavnagar",	"Bhopal",	"Bhubaneswar",	"Calicut",	"Chandigarh",	"Chennai",	"Coimbatore",	"Dehradun",	"Dharwad",	"Dubai",	"Durgapur",	"Erode",	"Guntur",	"Guwahati",	"Hubli",	"Hyderabad",	"Indore",	"Jaipur",	"Jalandhar",	"Jalgaon",	"Jamnagar",	"Jamshedpur",	"Jodpur",	"Kanpur",	"Karaikudi",	"Kochi",	"Kolkata",	"Kota",	"Kottayam",	"Lucknow",	"Ludhiana",	"Mangalore",	"Meerut",	"Moradabad",	"Mumbai",	"Mysore",	"Nagpur",	"Nasik",	"New Delhi",	"Panjim",	"Patna",	"Pondicherry",	"Pune",	"Raipur",	"Rajahmundry",	"Rajkot",	"Ranchi",	"Salem",	"Siliguri",	"Surat",	"Tirunelveli",	"Tirupur",	"Trichy",	"Trivandrum",	"Udaipur",	"Varanasi",	"Vashi",	"Vijayawada",	"Others"] %>
+	<%= f.input :permanent_state, label:'State',collection: ["Andhra Pradesh",	"Arunachal Pradesh",	"Assam",	"Bihar",	"Chandigarh",	"Delhi",	"Goa",	"Gujarat",	"Haryana",	"Himachal Pradesh",	"Jammu And Kashmir",	"Karnataka",	"Kerala",	"Madhya Pradesh",	"Maharashtra",	"Manipur",	"Meghalaya",	"Mizoram",	"Nagaland",	"Orissa",	"Punjab",	"Rajasthan",	"Tamil Nadu",	"Tripura",	"Uttar Pradesh",	"West Bengal",	"Others"] %>
 	<%= f.input :permanent_country, label:'Country'  ,priority: [ "India" ] %>
 	<%= f.input :permanent_postal_code, label:'Postal Code' %>
 	<%= f.input :permanent_landline, label:'Landline no.' %>

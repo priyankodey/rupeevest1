@@ -1,21 +1,19 @@
 
 <div class="container">
-<h2>Sign up</h2>
+
+<div class="verticalLine" >
+
+<h2>Sign up</h2><br>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
-  <div><%= f.label :first_name %><br />
-  <%= f.text_field :first_name %></div>
-
-  <div><%= f.label :last_name %><br />
-  <%= f.text_field :last_name %></div>
-
+  
   <div><%= f.label :email %><br />
-  <%= f.email_field :email, :autofocus => true %></div>
+  <%= f.email_field :email, :autofocus => true  %></div><br>
 
   <div><%= f.label :password %><br />
-  <%= f.password_field :password  %></div>
+  <%= f.password_field :password  %></div><br>
 
   <div><%= f.label :password_confirmation %><br />
   <%= f.password_field :password_confirmation %></div>
@@ -23,5 +21,31 @@
   <div><%= f.submit "Sign up" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+<%- if controller_name != 'sessions' %>
+  <%= link_to "Sign in", new_session_path(resource_name) %><br />
+<% end -%>
+
+<%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+  <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+<% end -%>
+
+</div>
+
+
+<div align="left" style="font-size: 30pt; padding-top: 150px; margin-left:13cm">
+OR
+</div>
+<div align="center" style="margin-top:-2cm">
+
+<%- if devise_mapping.omniauthable? %>
+  <%- resource_class.omniauth_providers.each do |provider| %>
+    <%= link_to image_tag("google_logo.png", alt: "slate"), omniauth_authorize_path(resource_name, provider)  %><br>
+    <h2><%= link_to  "Sign in with Gmail", omniauth_authorize_path(resource_name, provider) %></h2>
+  <% end -%>
+<% end -%>
+
+</div>
+
+
+
 </div>

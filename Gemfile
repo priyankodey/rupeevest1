@@ -21,6 +21,10 @@ gem 'jquery-ui-rails'
 gem 'omniauth-google-oauth2'
 gem 'country_select'
 gem 'roo'
+gem 'social-share-button'
+
+gem 'mail_form'
+gem 'simple_form'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'

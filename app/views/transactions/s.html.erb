@@ -1,7 +1,4 @@
 
-<td><%= current_user.kyc.first_name %> <%= current_user.kyc.last_name %></td><br>
-PAN : <td><%= current_user.kyc.pan %></td>
--------------------------------------------------------------------------------------------------------------------------<br>
 <% @transactions1.each do |transaction| %>
 <table>
     <tr>
@@ -44,6 +41,6 @@ Total amount =  <%= @total %><br>
 
 
 
-<!-- <a href="/transactions/holdings">DO holdings</a> -->
+ <a href="/transactions/holdings">DO holdings</a> 
 
 

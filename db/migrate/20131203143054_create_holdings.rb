@@ -7,7 +7,9 @@ class CreateHoldings < ActiveRecord::Migration
       t.belongs_to :transaction
       t.integer :units 
       t.float :buy_value
-      t.float :current_value											
+      t.float :current_value
+      t.string :folio
+      t.string :amc_code											
 	  t.timestamps
     end
   end

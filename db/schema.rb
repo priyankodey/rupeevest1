@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131230004811) do
+ActiveRecord::Schema.define(version: 20140121060751) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -296,6 +296,143 @@ ActiveRecord::Schema.define(version: 20131230004811) do
     t.integer  "units"
     t.float    "buy_value"
     t.float    "current_value"
+    t.string   "folio"
+    t.string   "amc_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "karvyfeedcons", force: true do |t|
+    t.string   "AMC",        limit: 3
+    t.string   "Folio",      limit: 15
+    t.string   "Appl_No",    limit: 25
+    t.string   "Sch_Code",   limit: 4
+    t.string   "option",     limit: 1
+    t.string   "Sch_desc",   limit: 200
+    t.string   "Inv_name",   limit: 40
+    t.string   "Jt1_Hld",    limit: 40
+    t.string   "Jt2_Hld",    limit: 40
+    t.string   "Add1",       limit: 40
+    t.string   "Add2",       limit: 40
+    t.string   "Add3",       limit: 40
+    t.string   "City",       limit: 40
+    t.string   "pincode",    limit: 6
+    t.string   "Trxn_Num",   limit: 15
+    t.string   "User_Cd",    limit: 10
+    t.string   "Usr_trno",   limit: 15
+    t.string   "Trn_Mode",   limit: 1
+    t.string   "Sub_TrTy",   limit: 2
+    t.date     "Tr_Date"
+    t.date     "Pr_Date"
+    t.string   "POP",        limit: 10
+    t.string   "Units",      limit: 25
+    t.string   "Amount",     limit: 25
+    t.string   "STT",        limit: 10
+    t.string   "TDS",        limit: 10
+    t.string   "Load",       limit: 10
+    t.string   "Tr_Type",    limit: 15
+    t.string   "Tr_Desc",    limit: 40
+    t.string   "NAV",        limit: 10
+    t.string   "Br_code",    limit: 10
+    t.string   "Sub_code",   limit: 25
+    t.string   "Red_Mode",   limit: 10
+    t.string   "Bnk_Name",   limit: 40
+    t.string   "Bnk_acno",   limit: 40
+    t.string   "Bnk_acty",   limit: 10
+    t.string   "Bnk_Brn",    limit: 40
+    t.string   "Bnk_city",   limit: 40
+    t.string   "MOH",        limit: 2
+    t.string   "Tax_Stat",   limit: 2
+    t.string   "Category",   limit: 2
+    t.string   "BRN_Code",   limit: 5
+    t.string   "IH_No",      limit: 15
+    t.date     "Rep_Date"
+    t.float    "Tranfee"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "karvyfeeds", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "transaction_id"
+    t.string   "transaction_status"
+    t.string   "feed_status"
+    t.string   "AMC_CODE",           limit: 3
+    t.string   "BROKE_CD",           limit: 20
+    t.string   "SBBR_CODE",          limit: 15
+    t.string   "User_Code",          limit: 10
+    t.integer  "USR_TXN_NO",         limit: 8
+    t.string   "Appl_No",            limit: 10
+    t.string   "FOLIO_NO",           limit: 15
+    t.string   "Ck_DIG_NO",          limit: 10
+    t.string   "TRXN_TYPE",          limit: 7
+    t.string   "SCH_CODE",           limit: 5
+    t.string   "FIRST_NAME",         limit: 70
+    t.string   "JONT_NAME1",         limit: 35
+    t.string   "JONT_NAME2",         limit: 35
+    t.string   "ADD1",               limit: 40
+    t.string   "ADD2",               limit: 40
+    t.string   "ADD3",               limit: 40
+    t.string   "CITY",               limit: 35
+    t.string   "PINCODE",            limit: 15
+    t.string   "PHONE_OFF",          limit: 15
+    t.string   "MOBILE_NO",          limit: 15
+    t.date     "TRXN_DATE"
+    t.time     "TRXN_TIME"
+    t.float    "UNITS"
+    t.float    "AMOUNT"
+    t.string   "CLOS_AC_CH",         limit: 1
+    t.date     "DOB"
+    t.string   "GUARDIAN",           limit: 35
+    t.string   "TAX_NUMBER",         limit: 40
+    t.string   "PHONE_RES",          limit: 15
+    t.string   "FAX_OFF",            limit: 15
+    t.string   "FAX_RES",            limit: 15
+    t.string   "EMAIL",              limit: 50
+    t.string   "ACCT_NO",            limit: 40
+    t.string   "ACCT_TYPE",          limit: 5
+    t.string   "BANK_NAME",          limit: 40
+    t.string   "BR_NAME",            limit: 40
+    t.string   "BANK_CITY",          limit: 35
+    t.string   "REINV_TAG",          limit: 1
+    t.string   "HOLD_NATUR",         limit: 2
+    t.string   "OCC_CODE",           limit: 2
+    t.string   "TAX_STATUS",         limit: 2
+    t.string   "REMARKS",            limit: 250
+    t.string   "STATE",              limit: 2
+    t.string   "PAN_2_HLDR",         limit: 40
+    t.string   "PAN_3_HLDR",         limit: 40
+    t.string   "Guard_PAN",          limit: 40
+    t.string   "LOCATION",           limit: 10
+    t.string   "UINno",              limit: 10
+    t.string   "FORM6061",           limit: 1
+    t.string   "FORM6061J1",         limit: 1
+    t.string   "FORM6061J2",         limit: 1
+    t.string   "PAY_MEC",            limit: 1
+    t.string   "RTGS_CD",            limit: 11
+    t.string   "NEFT_CD",            limit: 11
+    t.string   "MICR_CD",            limit: 9
+    t.string   "DEPBANK",            limit: 40
+    t.string   "DEP_ACNO",           limit: 50
+    t.date     "DEP_DATE"
+    t.string   "DEP_RFNo",           limit: 25
+    t.string   "SUB_TRXN_T",         limit: 6
+    t.string   "SIP_RFNO",           limit: 8
+    t.date     "SIP_RGDT"
+    t.string   "NOM_NAME",           limit: 40
+    t.string   "NOM_RELA",           limit: 40
+    t.string   "KYC_FLG",            limit: 1
+    t.string   "POA_STAT",           limit: 1
+    t.string   "MOD_TRXN",           limit: 1
+    t.string   "SIGN_VF",            limit: 1
+    t.string   "CUST_ID",            limit: 12
+    t.string   "LOG_WT",             limit: 70
+    t.string   "LOG_PE",             limit: 70
+    t.string   "DPID",               limit: 25
+    t.string   "ClientID",           limit: 25
+    t.string   "NRI_SOF",            limit: 25
+    t.string   "EUIN",               limit: 16
+    t.string   "EUIN_OPT",           limit: 1
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -312,7 +449,6 @@ ActiveRecord::Schema.define(version: 20131230004811) do
     t.string   "residence_status"
     t.string   "pan"
     t.string   "proof_of_identity"
-    t.text     "correspondence_address"
     t.string   "correspondence_city_town_village"
     t.string   "correspondence_state"
     t.string   "correspondence_country"
@@ -322,7 +458,6 @@ ActiveRecord::Schema.define(version: 20131230004811) do
     t.string   "correspondence_email"
     t.string   "correspondence_proof_of_address"
     t.boolean  "same"
-    t.text     "permanent_address"
     t.string   "permanent_city_town_village"
     t.string   "permanent_state"
     t.string   "permanent_country"
@@ -336,6 +471,12 @@ ActiveRecord::Schema.define(version: 20131230004811) do
     t.string   "pep_status"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "c_house_no"
+    t.string   "c_street_name"
+    t.string   "c_area_name"
+    t.string   "p_house_no"
+    t.string   "p_street_name"
+    t.string   "p_area_name"
   end
 
   create_table "msgfrompgs", force: true do |t|
@@ -390,6 +531,8 @@ ActiveRecord::Schema.define(version: 20131230004811) do
     t.string   "arn_code"
     t.date     "t_date"
     t.integer  "sip_months"
+    t.string   "rta"
+    t.string   "dividend_option"
   end
 
   create_table "users", force: true do |t|

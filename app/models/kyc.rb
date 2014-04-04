@@ -7,12 +7,16 @@ class Kyc < ActiveRecord::Base
 	validates_presence_of :nationality
 	validates_presence_of :pan
 	validates_format_of :pan, :with => /\A([A-Za-z]{5}\d{4}[A-Za-z]{1})\Z/i 
-	validates_presence_of :correspondence_address
+	validates_presence_of :c_house_no
+	validates_presence_of :c_street_name
+	validates_presence_of :c_area_name
 	validates_presence_of :correspondence_city_town_village
 	validates_presence_of :correspondence_state
 	validates_presence_of :correspondence_postal_code
 	validates_presence_of :correspondence_email
-	validates_presence_of :permanent_address
+	validates_presence_of :p_house_no
+	validates_presence_of :p_street_name
+	validates_presence_of :p_area_name
 	validates_presence_of :permanent_city_town_village
 	validates_presence_of :permanent_state
 	validates_presence_of :permanent_postal_code

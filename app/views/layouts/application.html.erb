@@ -3,8 +3,9 @@
 <head>
   <title>Invest in a Tax Saving ELSS fund to save upto Rs. 30,900 this year in tax under Sec. 80C. | Invest Online, Manage Financial goals and Save Tax | Gold, Mutual Funds, Bonds, Fixed Deposits
 </title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+
   <%= csrf_meta_tags %>
 
   
@@ -14,7 +15,7 @@
 	<div class="navbar navbar-fixed-top navbar-inverse" >
   		<div id= "abc" class="navbar-inner" >
   			<div class ="container">
-  				<a href = "/static_pages/home" class = "header_logo pull-left"><%= image_tag("logobig.jpg", alt: "logo") %></a>
+  				<a href = "/static_pages/home" class = "header_logo pull-left" style="margin-left:-0.45in"><%= image_tag("logobig1.jpg", alt: "logo") %></a>
   				<ul class = "nav">
   					
   					<li><%= link_to "About Us", static_pages_aboutus_path %><li>
@@ -32,10 +33,14 @@
               <li><a tabindex="-1" target="_blank" href="https://mail.live.com/default.aspx?rru=compose&amp;to=info@rupeevest.com&amp;subject=Query%20Regarding%20Rupeevest">Hotmail, Outlook, Live Mail</a></li>
               
             </ul>
-            <li>
-            <a target="_blank" href = "https://www.facebook.com/rupeevest"><%= image_tag("facebook1.png", alt: "fb") %></a>
-              </li>
-  					
+           
+  	<li>				
+<a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Frupeevest.com" title="Share on Facebook"><%= image_tag("facebook1.png", alt: "fb") %></a> </li>
+<li> 
+<a target="_blank" href="https://twitter.com/intent/tweet?text=&url=http%3A%2F%2Frupeevest.com" title="Twit on Twitter"><%= image_tag("twitter1.png", alt: "Twitter")  %></a> 
+</li>
+
+
           </ul>
 
           
@@ -73,20 +78,19 @@
     <%end%>
     </div>
 		<%= yield %>	
-
+</body> 
 
 
 
 
     <!-- starts footer -->
 
-    <div  class = "nnavbar navbar-fixed-bottom" >
-      
-    <h4 align="center">&copy; Rupeevest<h4>
-      
-    <div>
+   <footer id="footer">
+  
+    <h4 align="center">&copy; Rupeevest<h4>    
 
+  </footer>
 	
-</body>
+
 </html>
 

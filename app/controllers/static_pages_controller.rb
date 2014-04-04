@@ -13,7 +13,13 @@ class StaticPagesController < ApplicationController
    
   end
 
- 
+  def videotreasure
+    
+  end
+
+  def video
+   
+  end 
 
   def productpage
     @visitor = Visitor.new

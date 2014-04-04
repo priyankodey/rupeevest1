@@ -18,10 +18,20 @@ Select Bank <%= select_tag "bankid", options_from_collection_for_select(current_
 <%= fund.scheme_name %><br>	
 <%= hidden_field_tag "transactions[][user_id]", current_user.id %>
 <%= hidden_field_tag "transactions[][fund_id]", fund.id %>
-Amount(in Rs.) <%= number_field_tag "transactions[][amount]", nil %><br>
-Investment Option <%= select_tag "transactions[][option]", options_for_select(["Growth","Dividend Investment","Dividend Payout" ], "Growth") %><br>
+Amount(in Rs.) <%= number_field_tag "transactions[][amount]", fund.min_investment %><br>
+
 Transaction Type :<%= select_tag "transactions[][transaction_type]", options_for_select(["Lumpsum","SIP"]),:id => "txn" %><br>
 
+<% holdings_amc = current_user.holdings.where(:amc_code => fund.amc_code) %>
+<% if holdings_amc.exists? %>
+<% f_folio = holdings_amc.first.folio %>
+<% else %>
+<% f_folio = 'New' %>
+<% end %>
+<% if fund.fund_type == "Dividend" %>
+Dividend Option :<%= select_tag "transactions[][dividend_option]", options_for_select(["Reinvest","Payout"]) %><br>
+<% end %>
+Folio :<%= select_tag "transactions[][folio_id]",options_for_select([f_folio])%><br>
 <div id="sip" style="display: none;">
 Investment Date :<%= date_field_tag "transactions[][t_date]"%><br>
 No. of months :<%= number_field_tag "transactions[][sip_months]" %><br>

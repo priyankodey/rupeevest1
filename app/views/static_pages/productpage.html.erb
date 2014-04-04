@@ -2,15 +2,20 @@
   <div class="row-fluid">
     <div class="span12">
       <div class="tabbable" id="tabs-890699">
-        <ul class="nav nav-tabs">
-          <li >
+  
+
+<div id="topframe"  style="background-color:#EEEEEE; width:1130px; margin:0cm 0cm 0cm .5cm">
+        <ul class="nav nav-tabs offset4" style="border:none; font-size:11pt"> 
+          <li>
             <a href="#bonds" data-toggle="tab">Bonds</a>
           </li>
           <li>
             <a href="#fixeddeposit" data-toggle="tab">Fixed Deposit</a>
           </li>
-          <li><%= link_to "Mutual Funds", funds_path %><li>
+          <li><%= link_to "Mutual Funds", funds_path %></li>
         </ul>
+</div>   
+
         <div class="tab-content">
           <div class="tab-pane active" id="bonds">
             <div class="container-fluid">
@@ -19,7 +24,7 @@
                   <h3 class="text-left text-info">
                    <u>Tax Free Bonds</u>
                   </h3>
-                  <table class="table table-bordered table-hover">
+                  <table class="table table-bordered">
                     <thead>
                       <tr>
                         

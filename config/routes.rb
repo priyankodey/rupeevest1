@@ -53,7 +53,9 @@ Beta1::Application.routes.draw do
   get "static_pages/download_pdf2"
   get "static_pages/download_pdf3"
   get "static_pages/download_pdf4"
+  get "static_pages/video"
   get "dashboards/show"
+  get "static_pages/videotreasure"
 
   root :to => 'static_pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
