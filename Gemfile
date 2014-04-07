@@ -25,6 +25,7 @@ gem 'social-share-button'
 
 gem 'mail_form'
 gem 'simple_form'
+gem 'rails_serve_static_assets'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
