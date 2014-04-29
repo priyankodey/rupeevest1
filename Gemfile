@@ -22,7 +22,6 @@ gem 'omniauth-google-oauth2'
 gem 'country_select'
 gem 'roo'
 gem 'social-share-button'
-
 gem 'mail_form'
 gem 'simple_form'
 gem 'rails_serve_static_assets'
