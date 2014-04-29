@@ -44,6 +44,7 @@ Beta1::Application.routes.draw do
     end
   end
 
+  get "static_pages/index"
   get "static_pages/home"
   get "static_pages/whyus"
   get "static_pages/aboutus"

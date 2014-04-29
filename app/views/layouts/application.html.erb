@@ -3,25 +3,24 @@
 <head>
   <title>Invest in a Tax Saving ELSS fund to save upto Rs. 30,900 this year in tax under Sec. 80C. | Invest Online, Manage Financial goals and Save Tax | Gold, Mutual Funds, Bonds, Fixed Deposits
 </title>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 
   
 </head>
 <body>
 
-	<div class="navbar navbar-fixed-top navbar-inverse" >
-  		<div id= "abc" class="navbar-inner" >
-  			<div class ="container">
-  				<a href = "/static_pages/home" class = "header_logo pull-left" style="margin-left:-0.45in"><%= image_tag("logobig1.jpg", alt: "logo") %></a>
-  				<ul class = "nav">
-  					
-  					<li><%= link_to "About Us", static_pages_aboutus_path %><li>
+  <div class="navbar navbar-fixed-top navbar-inverse" >
+      <div id= "abc" class="navbar-inner" >
+        <div class ="container">
+          <a href = "/static_pages/home" class = "header_logo pull-left" style="margin-left:-0.45in"><%= image_tag("logobig1.jpg", alt: "logo") %></a>
+          <ul class = "nav">
+            
+            <li><%= link_to "About Us", static_pages_aboutus_path %><li>
             <li><%= link_to "Save Tax", new_taxsaving_path %><li>
-            <li><%= link_to "Investment Products", static_pages_productpage_path %><li>   	
-  					<li class="dropdown">
+            <li><%= link_to "Investment Products", static_pages_productpage_path %><li>     
+            <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                Connect with us  &nbsp;  &nbsp; <%= image_tag("glogo.png", alt: "logo") %>
 
@@ -34,7 +33,7 @@
               
             </ul>
            
-  	<li>				
+    <li>        
 <a target="_blank" href="http://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Frupeevest.com" title="Share on Facebook"><%= image_tag("facebook1.png", alt: "fb") %></a> </li>
 <li> 
 <a target="_blank" href="https://twitter.com/intent/tweet?text=&url=http%3A%2F%2Frupeevest.com" title="Twit on Twitter"><%= image_tag("twitter1.png", alt: "Twitter")  %></a> 
@@ -56,14 +55,14 @@
                 <% end %>
                 </ul>
             </div>
-  			</div>
-  		</div>
-  	</div>
+        </div>
+      </div>
+    </div>
 
 
 
 
-	<div class="container-fluid">	
+  <div class="container-fluid"> 
     <% if flash[:notice] %>
       <div class="alert alert-success">
         <button class="close" data-dismiss="alert">x</button>
@@ -77,7 +76,7 @@
       </div>
     <%end%>
     </div>
-		<%= yield %>	
+    <%= yield %>  
 </body> 
 
 
@@ -90,7 +89,7 @@
     <h4 align="center">&copy; Rupeevest<h4>    
 
   </footer>
-	
+  
 
 </html>
 

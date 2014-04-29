@@ -18,7 +18,5 @@
 //= require jquery.flot
 //= require jquery.flot.pie
 //= require jquery.flot.canvas.js
-//= require jquery.flot.axislabels.js
-//= require jquery.flot.orderBars.js
 //= require turbolinks
 //= require_tree .

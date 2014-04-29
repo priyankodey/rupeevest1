@@ -14,6 +14,7 @@ gem 'uglifier', '>= 1.3.0'
 
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
+gem "jquery-rails"
 gem 'devise'
 gem 'simple_form'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
@@ -26,6 +27,11 @@ gem 'social-share-button'
 gem 'mail_form'
 gem 'simple_form'
 gem 'rails_serve_static_assets'
+
+group :assets do
+  gem 'less-rails-bootstrap'
+  #gem 'bootstrap-sass', '~> 3.1.1'
+end
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
