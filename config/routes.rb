@@ -58,7 +58,7 @@ Beta1::Application.routes.draw do
   get "dashboards/show"
   get "static_pages/videotreasure"
 
-  root :to => 'static_pages#home'
+  root :to => 'static_pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
