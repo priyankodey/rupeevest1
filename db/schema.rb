@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140121060751) do
+ActiveRecord::Schema.define(version: 20140430122125) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -495,6 +495,14 @@ ActiveRecord::Schema.define(version: 20140121060751) do
     t.string   "order_number"
     t.float    "amount"
     t.text     "msg"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.date     "released_on"
+    t.decimal  "price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -24,6 +24,10 @@ class StaticPagesController < ApplicationController
    
   end 
 
+  def dashboard
+    render :layout => 'dashboard_layout'
+  end
+
   def productpage
     @visitor = Visitor.new
   end

@@ -1,5 +1,7 @@
 Beta1::Application.routes.draw do
   
+  get "products/index"
+  get "karvy/index"
   get "camsfeeds/index"
   get "setup/c80"
   get "setup/rgess"
@@ -44,6 +46,11 @@ Beta1::Application.routes.draw do
     end
   end
 
+  resources :products do
+ collection {post :import}
+  end
+
+
   get "static_pages/index"
   get "static_pages/home"
   get "static_pages/whyus"
@@ -57,6 +64,7 @@ Beta1::Application.routes.draw do
   get "static_pages/video"
   get "dashboards/show"
   get "static_pages/videotreasure"
+  get "static_pages/dashboard"
 
   root :to => 'static_pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
